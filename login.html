@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: #fff;
+      font-family: 'Montserrat', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .login-container {
+      width: 400px;
+      padding: 40px 30px 30px 30px;
+      border-radius: 16px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+      background: #fff;
+      text-align: center;
+    }
+    .logo {
+      width: 120px;
+      height: 120px;
+      object-fit: contain;
+      margin-bottom: 20px;
+    }
+    .title {
+      color: #f47ac2;
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .subtitle {
+      color: #888;
+      font-size: 1rem;
+      margin-bottom: 32px;
+    }
+    .input-field {
+      width: 100%;
+      padding: 14px;
+      margin-bottom: 18px;
+      border: none;
+      border-radius: 6px;
+      background: #ededed;
+      font-size: 1rem;
+      color: #555;
+      outline: none;
+      transition: background 0.2s;
+    }
+    .input-field:focus {
+      background: #e0e0ff;
+    }
+    .login-btn {
+      width: 100%;
+      padding: 16px;
+      background: #bfc2ff;
+      color: #222;
+      font-size: 1.2rem;
+      font-weight: 600;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: background 0.2s;
+    }
+    .login-btn:hover {
+      background: #a3a7f7;
+    }
+    .register-link {
+      display: block;
+      margin-top: 24px;
+      color: #888;
+      font-size: 1rem;
+    }
+    .register-link a {
+      color: #f47ac2;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    @media (max-width: 500px) {
+      .login-container {
+        width: 95vw;
+        padding: 24px 8px;
+      }
+      .logo {
+        width: 80px;
+        height: 80px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <img src="Icon_white.png" alt="Logo" class="logo">
+    <div class="title">Welcome Back!</div>
+    <div class="subtitle">Don't have an account? <a href="signup.html" style="color:#f47ac2;">Sign up here.</a></div>
+    <form>
+      <input type="email" class="input-field" placeholder="EMAIL" required>
+      <input type="password" class="input-field" placeholder="PASSWORD" required>
+      <button type="submit" class="login-btn">Log in</button>
+    </form>
+  </div>
+</body>
+</html> 
