@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Плейлист</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    html, body {
+      width: 100vw;
+      height: 100vh;
+      margin: 0;
+      padding: 0;
+      background: #fff;
+    }
+    .playlist-container {
+      width: 100vw;
+      min-height: 100vh;
+      background: #fff;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-bottom: 7vh;
+    }
+    .playlist-header {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      padding: 2vw 2vw 0 2vw;
+      box-sizing: border-box;
+      margin-bottom: 1vw;
+    }
+    .playlist-header .icon {
+      color: #f7a6e7;
+      font-size: 2vw;
+      margin-right: 1vw;
+      cursor: pointer;
+    }
+    .playlist-header .search-bar {
+      flex: 1;
+      margin: 0 1vw;
+      display: flex;
+      align-items: center;
+      background: #f7f7f7;
+      border-radius: 20px;
+      padding: 0.7vw 1vw;
+      border: 1px solid #eee;
+      font-size: 1.2vw;
+    }
+    .playlist-header .search-bar input {
+      border: none;
+      background: transparent;
+      width: 100%;
+      font-size: 1.2vw;
+      outline: none;
+    }
+    .playlist-header .icon:last-child {
+      margin-left: 1vw;
+    }
+    .playlist-cover {
+      width: 180px;
+      height: 180px;
+      background: #eee;
+      border-radius: 16px;
+      margin: 2vw auto 1vw auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 5vw;
+      color: #b6a6e7;
+    }
+    .playlist-title {
+      text-align: center;
+      color: #b6a6e7;
+      font-size: 1.5vw;
+      font-weight: bold;
+      margin-bottom: 0.2vw;
+    }
+    .playlist-desc {
+      text-align: center;
+      color: #b6a6e7;
+      font-size: 1vw;
+      opacity: 0.6;
+      margin-bottom: 1vw;
+    }
+    .playlist-edit-btn {
+      display: block;
+      margin: 0 auto 1vw auto;
+      background: linear-gradient(90deg, #e6e6fa 0%, #b6a6e7 100%);
+      color: #fff;
+      border: none;
+      border-radius: 20px;
+      padding: 0.7vw 2vw;
+      font-size: 1vw;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .playlist-table {
+      width: 90vw;
+      max-width: 600px;
+      margin: 0 auto;
+      border-collapse: collapse;
+      font-size: 1vw;
+      background: #fff;
+    }
+    .playlist-table th, .playlist-table td {
+      padding: 0.7vw 0.5vw;
+      text-align: left;
+    }
+    .playlist-table th {
+      color: #b6a6e7;
+      font-weight: bold;
+      border-bottom: 2px dotted #b6a6e7;
+    }
+    .playlist-table td {
+      border-bottom: 1px solid #eee;
+      vertical-align: middle;
+    }
+    .playlist-table img {
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      object-fit: cover;
+      margin-right: 0.5vw;
+      vertical-align: middle;
+    }
+    .playlist-table .song-title {
+      color: #222;
+      font-weight: bold;
+    }
+    .playlist-table .artist {
+      color: #8e8ee7;
+    }
+    .playlist-table .duration {
+      color: #222;
+      text-align: right;
+    }
+    .playlist-bottom-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100vw;
+      background: #f7f2fa;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      height: 7vh;
+      border-top-left-radius: 2vw;
+      border-top-right-radius: 2vw;
+      z-index: 100;
+    }
+    .playlist-bottom-bar .icon {
+      font-size: 2vw;
+      min-width: 36px;
+      color: #f7a6e7;
+    }
+    @media (max-width: 600px) {
+      .playlist-container {
+        padding: 2vw 2vw 12vw 2vw;
+      }
+      .playlist-title {
+        font-size: 1.2em;
+      }
+      .playlist-table th, .playlist-table td {
+        font-size: 1em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="playlist-container">
+    <div class="playlist-header">
+      <span class="icon" onclick="window.history.back();">&#8592;</span>
+      <div class="search-bar">
+        <input type="text" placeholder="Search" readonly />
+      </div>
+      <span class="icon" id="account-btn">&#128100;</span>
+      <span class="icon" id="playlist-btn">&#9776;</span>
+    </div>
+    <div class="playlist-cover">
+      <span style="font-size:3vw;">🖼️</span>
+    </div>
+    <div class="playlist-title">[Име на плейлист]</div>
+    <div class="playlist-desc">[описание]</div>
+    <button class="playlist-edit-btn">Промени</button>
+    <table class="playlist-table">
+      <thead>
+        <tr>
+          <th>Песен</th>
+          <th>Певец</th>
+          <th style="text-align:right;"><span style="font-size:1.2vw;">&#128337;</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><img src="cover1.jpg" alt="cover" /> [Име]</td>
+          <td class="artist">[Певец]</td>
+          <td class="duration">3:33</td>
+        </tr>
+        <tr>
+          <td><img src="cover2.jpg" alt="cover" /> [Име]</td>
+          <td class="artist">[Певец]</td>
+          <td class="duration">3:33</td>
+        </tr>
+        <tr>
+          <td><img src="cover3.jpg" alt="cover" /> [Име]</td>
+          <td class="artist">[Певец]</td>
+          <td class="duration">3:33</td>
+        </tr>
+        <tr>
+          <td><img src="cover4.jpg" alt="cover" /> [Име]</td>
+          <td class="artist">[Певец]</td>
+          <td class="duration">3:33</td>
+        </tr>
+        <tr>
+          <td><img src="cover5.jpg" alt="cover" /> [Име]</td>
+          <td class="artist">[Певец]</td>
+          <td class="duration">3:33</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="playlist-bottom-bar">
+      <span class="icon">&#9881;</span>
+      <span class="icon">&#9654;</span>
+      <span class="icon">&#128295;</span>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>

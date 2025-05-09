@@ -43,3 +43,9 @@ document.querySelectorAll('#search-btn').forEach(function(input) {
     window.location.href = 'search.html';
   };
 });
+
+document.querySelectorAll('#playlist-btn').forEach(function(input) {
+  input.onclick = function() {
+    window.location.href = 'playlist.html';
+  };
+});

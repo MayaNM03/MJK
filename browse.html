@@ -116,7 +116,17 @@
       <div class="browse-item"><span class="icon">&#128190;</span> Изтеглени</div>
       <div class="browse-item"><span class="icon">&#127925;</span> Албуми</div>
       <div class="browse-item"><span class="icon">&#128101;</span> Изпълнители</div>
-      <div class="browse-item"><span class="icon">&#9776;</span> Плейлисти</div>
+      <div class="browse-item" id="playlist-btn">
+        <span class="icon" >&#9776;</span> Плейлисти
+        <script>
+          document.querySelectorAll('#playlist-btn').forEach(function(input) {
+            input.onclick = function() {
+              window.location.href = 'playlist.html';
+            };
+          });
+
+        </script>
+      </div> 
     </div>
   </div>
 </body>
