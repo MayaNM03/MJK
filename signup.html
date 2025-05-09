@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Login</title>
+  <title>Sign Up</title>
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
   <style>
     body {
@@ -14,7 +14,7 @@
       height: 100vh;
       margin: 0;
     }
-    .login-container {
+    .signup-container {
       width: 400px;
       padding: 40px 30px 30px 30px;
       border-radius: 16px;
@@ -54,7 +54,7 @@
     .input-field:focus {
       background: #e0e0ff;
     }
-    .login-btn {
+    .signup-btn {
       width: 50%;
       padding: 16px;
       background: #bfc2ff;
@@ -67,22 +67,22 @@
       margin-top: 10px;
       transition: background 0.2s;
     }
-    .login-btn:hover {
+    .signup-btn:hover {
       background: #a3a7f7;
     }
-    .register-link {
+    .login-link {
       display: block;
       margin-top: 24px;
       color: #888;
       font-size: 1rem;
     }
-    .register-link a {
+    .login-link a {
       color: #f47ac2;
       text-decoration: none;
       font-weight: 600;
     }
     @media (max-width: 500px) {
-      .login-container {
+      .signup-container {
         width: 95vw;
         padding: 24px 8px;
       }
@@ -94,14 +94,16 @@
   </style>
 </head>
 <body>
-  <div class="login-container">
+  <div class="signup-container">
     <img src="Icon_white.png" alt="Logo" class="logo">
-    <div class="title">Welcome Back!</div>
-    <div class="subtitle">Don't have an account? <a href="signup.html" style="color:#f47ac2;">Sign up here.</a></div>
+    <div class="title">Create New Account</div>
+    <div class="subtitle">Already Registered? <a href="login.html" style="color:#f47ac2;">Log in here.</a></div>
     <form>
+      <input type="text" class="input-field" placeholder="NAME" required>
       <input type="email" class="input-field" placeholder="EMAIL" required>
       <input type="password" class="input-field" placeholder="PASSWORD" required>
-      <button type="submit" class="login-btn">Log in</button>
+      <input type="date" class="input-field" placeholder="DATE OF BIRTH" required>
+      <button type="submit" class="signup-btn">Sign up</button>
     </form>
   </div>
 </body>
