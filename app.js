@@ -49,3 +49,7 @@ document.querySelectorAll('#playlist-btn').forEach(function(input) {
     window.location.href = 'playlist.html';
   };
 });
+
+
+
+

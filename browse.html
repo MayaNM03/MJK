@@ -112,19 +112,49 @@
     </div>
     <input type="text" class="browse-search" placeholder="Search" />
     <div class="browse-list">
-      <div class="browse-item"><span class="icon">&#10084;</span> Любими</div>
-      <div class="browse-item"><span class="icon">&#128190;</span> Изтеглени</div>
-      <div class="browse-item"><span class="icon">&#127925;</span> Албуми</div>
-      <div class="browse-item"><span class="icon">&#128101;</span> Изпълнители</div>
-      <div class="browse-item" id="playlist-btn">
-        <span class="icon" >&#9776;</span> Плейлисти
+      <div class="browse-item" id="favorite-btn"><span class="icon">&#10084;</span> Любими
+        <script>
+          document.querySelectorAll('#favorite-btn').forEach(function(input) {
+            input.onclick = function() {
+              window.location.href = 'favorite.html';
+            };
+          });
+        </script>
+      </div>
+      <div class="browse-item" id="downloaded-btn"><span class="icon">&#128190;</span> Изтеглени
+        <script>
+          document.querySelectorAll('#downloaded-btn').forEach(function(input) {
+            input.onclick = function() {
+              window.location.href = 'downloaded.html';
+            };
+          });
+        </script>
+      </div>
+      <div class="browse-item" id="album-btn"><span class="icon">&#127925;</span> Албуми 
+        <script>          
+          document.querySelectorAll('#album-btn').forEach(function(input) {
+            input.onclick = function() {
+              window.location.href = 'album.html';
+            };
+          });
+        </script>
+      </div>
+      <div class="browse-item" id="artist-btn" ><span class="icon">&#128101;</span> Изпълнители
+        <script>
+          document.querySelectorAll('#artist-btn').forEach(function(input) {
+            input.onclick = function() {
+              window.location.href = 'artist.html';
+            };
+          });
+        </script>
+      </div>
+      <div class="browse-item" id="playlist-btn"><span class="icon" >&#9776;</span> Плейлисти
         <script>
           document.querySelectorAll('#playlist-btn').forEach(function(input) {
             input.onclick = function() {
               window.location.href = 'playlist.html';
             };
           });
-
         </script>
       </div> 
     </div>

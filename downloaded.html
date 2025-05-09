@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Изтеглени</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    html, body {
+      width: 100vw;
+      height: 100vh;
+      margin: 0;
+      padding: 0;
+      background: #fff;
+    }
+    .downloaded-container {
+      width: 100vw;
+      min-height: 100vh;
+      background: #fff;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-bottom: 7vh;
+    }
+    .downloaded-header {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      padding: 2vw 2vw 0 2vw;
+      box-sizing: border-box;
+      margin-bottom: 1vw;
+    }
+    .downloaded-header .icon {
+      color: #f7a6e7;
+      font-size: 2vw;
+      margin-right: 1vw;
+      cursor: pointer;
+    }
+    .downloaded-header .search-bar {
+      flex: 1;
+      margin: 0 1vw;
+      display: flex;
+      align-items: center;
+      background: #f7f7f7;
+      border-radius: 20px;
+      padding: 0.7vw 1vw;
+      border: 1px solid #eee;
+      font-size: 1.2vw;
+    }
+    .downloaded-header .search-bar input {
+      border: none;
+      background: transparent;
+      width: 100%;
+      font-size: 1.2vw;
+      outline: none;
+    }
+    .downloaded-header .icon:last-child {
+      margin-left: 1vw;
+    }
+    .downloaded-title {
+      color: #b6a6e7;
+      font-size: 1.5vw;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 0.2vw;
+    }
+    .downloaded-table {
+      width: 90vw;
+      max-width: 600px;
+      margin: 0 auto;
+      border-collapse: collapse;
+      font-size: 1vw;
+      background: #fff;
+    }
+    .downloaded-table th, .downloaded-table td {
+      padding: 0.7vw 0.5vw;
+      text-align: left;
+    }
+    .downloaded-table th {
+      color: #b6a6e7;
+      font-weight: bold;
+      border-bottom: 2px dotted #b6a6e7;
+    }
+    .downloaded-table td {
+      border-bottom: 1px solid #eee;
+      vertical-align: middle;
+    }
+    .downloaded-table img {
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      object-fit: cover;
+      margin-right: 0.5vw;
+      vertical-align: middle;
+    }
+    .downloaded-table .song-title {
+      color: #222;
+      font-weight: bold;
+    }
+    .downloaded-table .artist {
+      color: #8e8ee7;
+    }
+    .downloaded-table .duration {
+      color: #222;
+      text-align: right;
+    }
+    .downloaded-bottom-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100vw;
+      background: #f7f2fa;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      height: 7vh;
+      border-top-left-radius: 2vw;
+      border-top-right-radius: 2vw;
+      z-index: 100;
+    }
+    .downloaded-bottom-bar .icon {
+      font-size: 2vw;
+      min-width: 36px;
+      color: #f7a6e7;
+    }
+    @media (max-width: 600px) {
+      .downloaded-container {
+        padding: 2vw 2vw 12vw 2vw;
+      }
+      .downloaded-title {
+        font-size: 1.2em;
+      }
+      .downloaded-table th, .downloaded-table td {
+        font-size: 1em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="downloaded-container">
+    <div class="downloaded-header">
+      <span class="icon" onclick="window.history.back();">&#8592;</span>
+      <div class="search-bar">
+        <input type="text" placeholder="Search" readonly />
+      </div>
+      <span class="icon" id="account-btn">&#128100;</span>
+      <span class="icon">&#128190;</span>
+    </div>
+    <div class="downloaded-title">Изтеглени песни</div>
+    <table class="downloaded-table">
+      <thead>
+        <tr>
+          <th>Песен</th>
+          <th>Певец</th>
+          <th style="text-align:right;"><span style="font-size:1.2vw;">&#128337;</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><img src="cover1.jpg" alt="cover" /> [Име]</td>
+          <td class="artist">[Певец]</td>
+          <td class="duration">3:33</td>
+        </tr>
+        <tr>
+          <td><img src="cover2.jpg" alt="cover" /> [Име]</td>
+          <td class="artist">[Певец]</td>
+          <td class="duration">3:33</td>
+        </tr>
+        <tr>
+          <td><img src="cover3.jpg" alt="cover" /> [Име]</td>
+          <td class="artist">[Певец]</td>
+          <td class="duration">3:33</td>
+        </tr>
+        <tr>
+          <td><img src="cover4.jpg" alt="cover" /> [Име]</td>
+          <td class="artist">[Певец]</td>
+          <td class="duration">3:33</td>
+        </tr>
+        <tr>
+          <td><img src="cover5.jpg" alt="cover" /> [Име]</td>
+          <td class="artist">[Певец]</td>
+          <td class="duration">3:33</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="downloaded-bottom-bar">
+      <span class="icon">&#9881;</span>
+      <span class="icon">&#9654;</span>
+      <span class="icon">&#128295;</span>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
