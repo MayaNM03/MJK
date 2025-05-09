@@ -152,5 +152,16 @@
       </div>
     </div>
   </div>
+  <script>
+    document.querySelector('.dark-mode-btn').onclick = function() {
+      localStorage.setItem('darkMode', 'on');
+      document.body.classList.add('dark-mode');
+    };
+  </script>
+  <script>
+    if (localStorage.getItem('darkMode') === 'on') {
+      document.body.classList.add('dark-mode');
+    }
+  </script>
 </body>
 </html>

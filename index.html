@@ -50,6 +50,11 @@
     </div>
     <div class="bottom-bar">
       <span class="icon" id="settings-btn">&#9881;</span>
+      <script>
+        document.getElementById('settings-btn').onclick = function() {
+          window.location.href = 'settings.html';
+        };
+      </script>
       <span class="icon" id="play-btn">&#9654;</span>
       <script>
         document.getElementById('play-btn').onclick = function() {
@@ -57,6 +62,11 @@
         };
       </script>
       <span class="icon" id="help-btn">&#128295;</span>
+      <script>
+        document.getElementById('help-btn').onclick = function() {
+          window.location.href = 'help.html';
+        };
+      </script>
     </div>
   </div>
   <script src="app.js"></script>
