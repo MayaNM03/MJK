@@ -65,5 +65,51 @@
       document.body.classList.add('dark-mode');
     }
   </script>
+  /* Dark mode styles */
+  <style>
+    body.dark-mode {
+      background: #6a4ea0 !important;
+      color: #d26eb0 !important;
+    }
+    .dark-mode .top-bar,
+    .dark-mode .player-menu,
+    .dark-mode .player-menu-item,
+    .dark-mode .player-album,
+    .dark-mode .player-info,
+    .dark-mode .player-title,
+    .dark-mode .player-artist,
+    .dark-mode .player-album-name,
+    .dark-mode .player-controls,
+    .dark-mode .player-buttons,
+    .dark-mode .icon,
+    .dark-mode .search {
+      background: transparent !important;
+      color: #d26eb0 !important;
+      border-color: #d26eb0 !important;
+    }
+    .dark-mode .player-menu-item .icon {
+      color: #ffd1ec !important;
+    }
+    .dark-mode .player-album img {
+      background: #d26eb0 !important;
+    }
+    .dark-mode .player-controls {
+      background: #6a4ea0 !important;
+    }
+    .dark-mode .player-buttons .icon {
+      color: #ffd1ec !important;
+    }
+    .dark-mode .icon {
+      color: #d26eb0 !important;
+    }
+    .dark-mode .icon:hover {
+      color: #ffb6e6 !important;
+    }
+    .dark-mode .search {
+      background: #e48ad7 !important;
+      color: #fff !important;
+      border: none !important;
+    }
+  </style>
 </body>
 </html>
