@@ -67,10 +67,10 @@
   <div class="player-controls">
     <input type="range" min="0" max="100" value="0" id="progress-bar"/>
     <div class="player-buttons">
-      <span class="icon">&#9198;</span>
+      <span class="icon" id="prev-btn"> &#9198;</span>
       <span class="icon play-btn-img" id="play-btn"><img src="diamand.png" alt="Play" width="40" height="40" /></span>
-      <span class="icon">&#9197;</span>
-      <span class="icon">&#128257;</span>
+      <span class="icon" id="next-btn">&#9197;</span>
+      <span class="icon" id="replay-btn">&#128257;</span>
     </div>
     <audio id="audio-player" src="Aqua - Barbie Girl (Official Music Video).mp3" preload="auto"></audio>
   </div>
@@ -78,14 +78,100 @@
   <script>
     const audio = document.getElementById('audio-player');
     let isPlaying = false;
-    document.getElementById('play-btn').onclick = function() {
+    let isReplay = false;
+    let songIndex = 0;
+    const playBtn = document.getElementById('play-btn');
+    const prevBtn = document.getElementById('prev-btn');
+    const nextBtn = document.getElementById('next-btn');
+    const replayBtn = document.getElementById('replay-btn');
+    const songs = [
+      {
+        src: 'Aqua - Barbie Girl (Official Music Video).mp3',
+        cover: 'https://cdn-images.dzcdn.net/images/cover/eaf83c8d5d9d21d6ddd380222bc2fc72/1900x1900-000000-80-0-0.jpg',
+        name: 'Barbie Girl',
+        artist: 'Aqua',
+        album: 'Aquarium',
+        length: '3:16'
+      },
+      {
+        src: 'Into You - Ariana Grande (Lyrics).mp3',
+        cover: 'https://th.bing.com/th/id/OIP.5vXCsLpHPRa4bmZs1dJEawHaHa?w=158&h=180&c=7&r=0&o=7&cb=iwp1&dpr=1.3&pid=1.7&rm=3',
+        name: 'Into You',
+        artist: 'Ariana Grande',
+        album: 'Dangerous Woman',
+        length: '4:15'
+      },
+      {
+        src: 'Lady Gaga - Abracadabra (Official Music Video).mp3',
+        cover: 'https://media.pitchfork.com/photos/67a0394758a145a55f221e18/4:3/w_2279,h_1710,c_limit/Lady-Gaga-Abracadabra.jpg',
+        name: 'Abracadabra',
+        artist: 'Lady Gaga',
+        album: 'Chromatica',
+        length: '3:16'
+      },
+      {
+        src: 'Галена x Tea Tairovic - Абракадабра www.voxymp3.com_.mp3',
+        cover: 'https://i1.sndcdn.com/artworks-8kxQDxAXWo1uEzDI-nGOBJA-t500x500.jpg',
+        name: 'Абракадабра',
+        artist: 'Галена x Tea Tairovic',
+        album: 'Абракадабра',
+        length: '4:15'
+      }
+    ];
+
+    function updatePlayer(index) {
+      audio.src = songs[index].src;
+      document.getElementById('player-cover').src = songs[index].cover;
+      document.getElementById('song-name').textContent = songs[index].name;
+      document.getElementById('song-artist').textContent = songs[index].artist;
+      document.getElementById('album-name').textContent = songs[index].album;
+      document.getElementById('song-length').textContent = songs[index].length;
+    }
+
+    function setPlayBtnRotation() {
+      const img = playBtn.querySelector('img');
+      if (!isPlaying && img) {
+        img.style.transform = 'rotate(0deg)';
+      } else if (img) {
+        img.style.transform = 'rotate(-90deg)';
+      }
+    }
+
+    playBtn.onclick = function() {
       if (isPlaying) {
         audio.pause();
       } else {
         audio.play();
       }
       isPlaying = !isPlaying;
+      setPlayBtnRotation();
     };
+
+    prevBtn.onclick = function() {
+      songIndex = (songIndex - 1 + songs.length) % songs.length;
+      updatePlayer(songIndex);
+      audio.play();
+      isPlaying = true;
+      setPlayBtnRotation();
+    };
+
+    nextBtn.onclick = function() {
+      songIndex = (songIndex + 1 + songs.length) % songs.length;
+      updatePlayer(songIndex);
+      audio.play();
+      isPlaying = true;
+      setPlayBtnRotation();
+    };
+
+    replayBtn.onclick = function() {
+      isReplay = !isReplay;
+      audio.loop = isReplay;
+      replayBtn.style.color = isReplay ? '#ffb6e6' : '';
+    };
+
+    // Initial state
+    updatePlayer(songIndex);
+    setPlayBtnRotation();
     // On every page: apply dark mode if set
     if (localStorage.getItem('darkMode') === 'on') {
       document.body.classList.add('dark-mode');
