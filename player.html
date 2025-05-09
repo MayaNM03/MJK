@@ -26,16 +26,31 @@
   </div>  
   <div class="player-menu">
     <div class="player-menu-item">
-      <span class="icon">&#128191;</span>
+      <span class="icon" id="playlists-btn">&#128191;</span>
+      <script>
+        document.getElementById('playlists-btn').onclick = function() {
+          window.location.href = 'playlists.html';
+        };
+      </script>
       <div>Библиотека</div>
     </div>  
     <div class="player-menu-item">
-      <span class="icon">&#10084;</span>
-      <div>Любими<br>плейлисти</div>
+      <span class="icon" id="favorite-btn">&#10084;</span>
+      <script>
+        document.getElementById('favorite-btn').onclick = function() {
+          window.location.href = 'favorite.html';
+        };
+      </script>
+      <div>Любими</div>
     </div>
     <div class="player-menu-item">
-      <span class="icon">&#8681;</span>
-      <div>Изтеглени<br>плейлисти</div>
+      <span class="icon" id="downloaded-btn">&#8681;</span>
+      <script>
+        document.getElementById('downloaded-btn').onclick = function() {
+          window.location.href = 'downloaded.html';
+        };
+      </script>
+      <div>Изтеглени</div>
     </div>
   </div>
   <div class="player-album">
