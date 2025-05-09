@@ -112,6 +112,62 @@
         font-size: 1.2em;
       }
     }
+    /* Dark mode styles */
+    body.dark-mode, .dark-mode .help-container {
+      background: #6a4ea0 !important;
+      color: #d26eb0 !important;
+    }
+    .dark-mode .help-header,
+    .dark-mode .help-title,
+    .dark-mode .help-label,
+    .dark-mode .help-divider,
+    .dark-mode .help-select,
+    .dark-mode .help-section-title {
+      background: transparent !important;
+      color: #d26eb0 !important;
+      border-color: #d26eb0 !important;
+    }
+    .dark-mode .help-section {
+      background: #572d69 !important;
+      color: #ffd1ec !important;
+      border-color: #d26eb0 !important;
+    }
+    .dark-mode .help-select {
+      background: #e48ad7 !important;
+      color: #fff !important;
+    }
+    .dark-mode .help-textarea {
+      background: #572d69 !important;
+      color: #ffd1ec !important;
+      border-color: #d26eb0 !important;
+    }
+    .dark-mode .help-send-btn {
+      background: #e48ad7 !important;
+      color: #fff !important;
+      border-color: #d26eb0 !important;
+    }
+    .dark-mode .help-send-btn:hover {
+      background: #ffb6e6 !important;
+      color: #fff !important;
+    }
+    .dark-mode .help-footer {
+      background: #572d69 !important;
+    }
+    .dark-mode .help-footer-btn {
+      background: #e48ad7 !important;
+      color: #fff !important;
+      border-color: #d26eb0 !important;
+    }
+    .dark-mode .help-footer-btn:hover {
+      background: #ffb6e6 !important;
+      color: #fff !important;
+    }
+    .dark-mode .icon {
+      color: #d26eb0 !important;
+    }
+    .dark-mode .icon:hover {
+      color: #ffb6e6 !important;
+    }
   </style>
 </head>
 <body>
@@ -147,5 +203,12 @@
       <button class="help-footer-btn">Излез</button>
     </div>
   </div>
+  <script src="app.js"></script>
+  <script>
+    // On every page: apply dark mode if set
+    if (localStorage.getItem('darkMode') === 'on') {
+      document.body.classList.add('dark-mode');
+    }
+  </script>
 </body>
 </html>

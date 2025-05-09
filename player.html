@@ -58,5 +58,12 @@
       <span class="icon">&#128257;</span>
     </div>
   </div>
+  <script src="app.js"></script>
+  <script>
+    // On every page: apply dark mode if set
+    if (localStorage.getItem('darkMode') === 'on') {
+      document.body.classList.add('dark-mode');
+    }
+  </script>
 </body>
 </html>

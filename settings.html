@@ -104,6 +104,45 @@
       color: #6c63ff;
       font-size: 1.2vw;
     }
+    /* Dark mode styles */
+    body.dark-mode, .dark-mode .settings-container {
+      background: #6a4ea0 !important;
+      color: #d26eb0 !important;
+    }
+    .dark-mode .settings-header,
+    .dark-mode .settings-title,
+    .dark-mode .settings-label,
+    .dark-mode .settings-select,
+    .dark-mode .settings-btn,
+    .dark-mode .dark-mode-btn {
+      background: transparent !important;
+      color: #d26eb0 !important;
+      border-color: #d26eb0 !important;
+    }
+    .dark-mode .settings-section {
+      background: #572d69 !important;
+      color: #ffd1ec !important;
+      border-color: #d26eb0 !important;
+    }
+    .dark-mode .settings-select {
+      background: #e48ad7 !important;
+      color: #fff !important;
+    }
+    .dark-mode .settings-btn, .dark-mode .dark-mode-btn {
+      background: #e48ad7 !important;
+      color: #fff !important;
+      border-color: #d26eb0 !important;
+    }
+    .dark-mode .settings-btn:hover, .dark-mode .dark-mode-btn:hover {
+      background: #ffb6e6 !important;
+      color: #fff !important;
+    }
+    .dark-mode .icon {
+      color: #d26eb0 !important;
+    }
+    .dark-mode .icon:hover {
+      color: #ffb6e6 !important;
+    }
   </style>
 </head>
 <body>
@@ -153,12 +192,18 @@
     </div>
   </div>
   <script>
-    document.querySelector('.dark-mode-btn').onclick = function() {
-      localStorage.setItem('darkMode', 'on');
-      document.body.classList.add('dark-mode');
-    };
-  </script>
-  <script>
+    document.querySelectorAll('.dark-mode-btn').forEach(function(btn) {
+      btn.onclick = function() {
+        const isDark = localStorage.getItem('darkMode') === 'on';
+        if (isDark) {
+          localStorage.setItem('darkMode', 'off');
+        } else {
+          localStorage.setItem('darkMode', 'on');
+        }
+        document.body.classList.toggle('dark-mode', !isDark);
+      };
+    });
+
     if (localStorage.getItem('darkMode') === 'on') {
       document.body.classList.add('dark-mode');
     }

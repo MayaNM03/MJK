@@ -6,6 +6,44 @@
   <title>Music App</title>
   <link rel="stylesheet" href="styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <style>
+    /* Dark mode styles */
+    body.dark-mode, .dark-mode #main-page, .dark-mode #player-page {
+      background: #6a4ea0 !important;
+      color: #d26eb0 !important;
+    }
+    .dark-mode .top-bar,
+    .dark-mode .greeting,
+    .dark-mode .section,
+    .dark-mode .scroll-list,
+    .dark-mode .bottom-bar,
+    .dark-mode .icon,
+    .dark-mode .search {
+      background: transparent !important;
+      color: #d26eb0 !important;
+      border-color: #d26eb0 !important;
+    }
+    .dark-mode .section h2 {
+      color: #ffd1ec !important;
+    }
+    .dark-mode .scroll-list img {
+      background: #d26eb0 !important;
+    }
+    .dark-mode .bottom-bar {
+      background: #572d69 !important;
+    }
+    .dark-mode .icon {
+      color: #d26eb0 !important;
+    }
+    .dark-mode .icon:hover {
+      color: #ffb6e6 !important;
+    }
+    .dark-mode .search {
+      background: #e48ad7 !important;
+      color: #fff !important;
+      border: none !important;
+    }
+  </style>
 </head>
 <body>
   <!-- Main Page -->
@@ -70,5 +108,11 @@
     </div>
   </div>
   <script src="app.js"></script>
+  <script>
+    // On every page: apply dark mode if set
+    if (localStorage.getItem('darkMode') === 'on') {
+      document.body.classList.add('dark-mode');
+    }
+  </script>
 </body>
 </html>

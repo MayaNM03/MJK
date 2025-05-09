@@ -123,6 +123,40 @@
       .account-box {
         font-size: 1em;
       }
+      
+    }
+    /* Dark mode styles */
+    body.dark-mode, .dark-mode .account-container {
+      background: #6a4ea0 !important;
+      color: #d26eb0 !important;
+    }
+    .dark-mode .account-header,
+    .dark-mode .account-title,
+    .dark-mode .account-label,
+    .dark-mode .account-divider,
+    .dark-mode .account-select {
+      background: transparent !important;
+      color: #d26eb0 !important;
+      border-color: #d26eb0 !important;
+    }
+    .dark-mode .account-avatar {
+      background: #d26eb0 !important;
+      color: #fff !important;
+    }
+    .dark-mode .account-box {
+      background: #572d69 !important;
+      color: #ffd1ec !important;
+      border-color: #d26eb0 !important;
+    }
+    .dark-mode .account-select {
+      background: #e48ad7 !important;
+      color: #fff !important;
+    }
+    .dark-mode .icon {
+      color: #d26eb0 !important;
+    }
+    .dark-mode .icon:hover {
+      color: #ffb6e6 !important;
     }
   </style>
 </head>
@@ -156,5 +190,12 @@
       <option>English</option>
     </select>
   </div>
+  <script src="app.js"></script>
+  <script>
+    // On every page: apply dark mode if set
+    if (localStorage.getItem('darkMode') === 'on') {
+      document.body.classList.add('dark-mode');
+    }
+  </script>
 </body>
 </html>

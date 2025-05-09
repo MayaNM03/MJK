@@ -167,6 +167,56 @@
         font-size: 1em;
       }
     }
+    body.dark-mode, .dark-mode .playlist-container {
+      background: #6a4ea0 !important;
+      color: #d26eb0 !important;
+    }
+    .dark-mode .playlist-header,
+    .dark-mode .playlist-table,
+    .dark-mode .playlist-title,
+    .dark-mode .playlist-desc,
+    .dark-mode .playlist-change-btn,
+    .dark-mode .bottom-bar,
+    .dark-mode .icon,
+    .dark-mode .search,
+    .dark-mode .playlist-cover {
+      background: transparent !important;
+      color: #d26eb0 !important;
+      border-color: #d26eb0 !important;
+    }
+    .dark-mode .playlist-table th,
+    .dark-mode .playlist-table td {
+      color: #d26eb0 !important;
+      border-bottom: 2px dotted #d26eb0 !important;
+    }
+    .dark-mode .playlist-table img {
+      background: #d26eb0 !important;
+    }
+    .dark-mode .playlist-change-btn {
+      background: #e48ad7 !important;
+      color: #d26eb0 !important;
+    }
+    .dark-mode .playlist-change-btn:hover {
+      background: #ffb6e6 !important;
+    }
+
+    .dark-mode .icon {
+      color: #d26eb0 !important;
+    }
+    .dark-mode .icon:hover {
+      color: #ffb6e6 !important;
+    }
+    .dark-mode .icon {
+      color: #d26eb0 !important;
+    }
+    .dark-mode .search {
+      background: #e48ad7 !important;
+      color: #6a4ea0 !important;
+      border: none !important;
+    }
+    .dark-mode .playlist-bottom-bar {
+      background: #572d69 !important;
+    }
   </style>
 </head>
 <body>
@@ -235,5 +285,11 @@
     </div>
   </div>
   <script src="app.js"></script>
+  <script>
+    // On every page: apply dark mode if set
+    if (localStorage.getItem('darkMode') === 'on') {
+      document.body.classList.add('dark-mode');
+    }
+  </script>
 </body>
 </html>

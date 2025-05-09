@@ -88,6 +88,39 @@
         height: 70px;
       }
     }
+    /* Dark mode styles */
+    body.dark-mode, .dark-mode .search-container {
+      background: #6a4ea0 !important;
+      color: #d26eb0 !important;
+    }
+    .dark-mode .search-header,
+    .dark-mode .search-section-title,
+    .dark-mode .search-bar,
+    .dark-mode .search-bar input {
+      background: transparent !important;
+      color: #d26eb0 !important;
+      border-color: #d26eb0 !important;
+    }
+    .dark-mode .search-scroll-list {
+      background: #572d69 !important;
+    }
+    .dark-mode .search-scroll-list img {
+      background: #d26eb0 !important;
+    }
+    .dark-mode .icon {
+      color: #d26eb0 !important;
+    }
+    .dark-mode .icon:hover {
+      color: #ffb6e6 !important;
+    }
+    .dark-mode .search-bar {
+      background: #e48ad7 !important;
+      color: #fff !important;
+      border: none !important;
+    }
+    .dark-mode .search-bar input {
+      color: #fff !important;
+    }
   </style>
 </head>
 <body>
@@ -130,5 +163,12 @@
       <img src="cover11.jpg" alt="cover" />
     </div>
   </div>
+  <script src="app.js"></script>
+  <script>
+    // On every page: apply dark mode if set
+    if (localStorage.getItem('darkMode') === 'on') {
+      document.body.classList.add('dark-mode');
+    }
+  </script>
 </body>
 </html>

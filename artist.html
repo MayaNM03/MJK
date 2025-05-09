@@ -135,6 +135,46 @@
         font-size: 1em;
       }
     }
+    /* Dark mode styles */
+    body.dark-mode, .dark-mode .artist-container {
+      background: #6a4ea0 !important;
+      color: #d26eb0 !important;
+    }
+    .dark-mode .artist-header,
+    .dark-mode .artist-title,
+    .dark-mode .artist-label,
+    .dark-mode .artist-divider,
+    .dark-mode .artist-select {
+      background: transparent !important;
+      color: #d26eb0 !important;
+      border-color: #d26eb0 !important;
+    }
+    .dark-mode .artist-table {
+      background: #572d69 !important;
+      color: #ffd1ec !important;
+      border-color: #d26eb0 !important;
+    }
+    .dark-mode .artist-table th,
+    .dark-mode .artist-table td {
+      color: #d26eb0 !important;
+      border-bottom: 2px dotted #d26eb0 !important;
+    }
+    .dark-mode .artist-table img {
+      background: #d26eb0 !important;
+    }
+    .dark-mode .artist-bottom-bar {
+      background: #572d69 !important;
+    }
+    .dark-mode .icon {
+      color: #d26eb0 !important;
+    }
+    .dark-mode .icon:hover {
+      color: #ffb6e6 !important;
+    }
+    .dark-mode .artist-select {
+      background: #e48ad7 !important;
+      color: #fff !important;
+    }
   </style>
 </head>
 <body>
@@ -197,5 +237,11 @@
     </div>
   </div>
   <script src="app.js"></script>
+  <script>
+    // On every page: apply dark mode if set
+    if (localStorage.getItem('darkMode') === 'on') {
+      document.body.classList.add('dark-mode');
+    }
+  </script>
 </body>
 </html>
