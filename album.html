@@ -230,9 +230,26 @@
       </tbody>
     </table>
     <div class="footer-bar">
-      <span class="icon">&#9881;</span>
-      <span class="icon">&#9654;</span>
-      <span class="icon">&#128295;</span>
+      <span class="icon" id="settings-btn">&#9881;</span>
+      <script>
+        document.getElementById('settings-btn').onclick = function() {
+          window.location.href = 'settings.html';
+        };
+      </script>
+      <span class="icon play-btn-img" id="play-btn">
+        <img src="diamand.png" alt="Play" width="40" height="40" />
+      </span>
+      <script>
+        document.getElementById('play-btn').onclick = function() {
+          window.location.href = 'player.html';
+        };
+      </script>
+      <span class="icon" id="help-btn">&#128295;</span>
+      <script>
+        document.getElementById('help-btn').onclick = function() {
+          window.location.href = 'help.html';
+        };
+      </script>
     </div>
   </div>
   <script src="app.js"></script>

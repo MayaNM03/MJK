@@ -237,8 +237,14 @@
           window.location.href = 'settings.html';
         };
       </script>
-
-      <span class="icon" id="play-btn">&#9654;</span>
+      <span class="icon play-btn-img" id="play-btn"> 
+        <img src="diamand.png" alt="Play" width="40" height="40" />
+        <script>
+          document.getElementById('play-btn').onclick = function() {
+            window.location.href = 'player.html';
+          };
+        </script>
+      </span>
       <script>
         document.getElementById('play-btn').onclick = function() {
           window.location.href = 'player.html';

@@ -171,3 +171,12 @@ body.dark-mode .scroll-list {
   scrollbar-color: #d26eb0 #6a4ea0;
   scrollbar-width: thin;
 }
+.play-btn-img img {
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  display: inline-block;
+  vertical-align: middle;
+}
+.play-btn-img:hover img {
+  transform: rotate(-90deg);
+}

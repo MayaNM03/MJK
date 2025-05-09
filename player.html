@@ -54,7 +54,7 @@
     </div>
   </div>
   <div class="player-album">
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRktn6Pj-JgagClY79j9QALGZgwJOxmg049fw&s" alt="Album Cover" id="player-cover"/>
+    <img src="https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/02/7e/2d/027e2d5a-06c8-a064-d734-2eff65980ee8/1779F33A-0A83-11EE-9592-777289A79EC0.jpg/800x800cc.jpg" alt="Album Cover" id="player-cover"/>
   </div>
   <div class="player-info">
     <div class="player-title">
@@ -71,6 +71,27 @@
       <span class="icon" id="play-btn">&#9654;</span>
       <span class="icon">&#9197;</span>
       <span class="icon">&#128257;</span>
+    </div>
+    <div class="footer-bar">
+      <span class="icon" id="settings-btn">&#9881;</span>
+      <script>
+        document.getElementById('settings-btn').onclick = function() {
+          window.location.href = 'settings.html';
+        };
+      </script>
+      <span class="icon play-btn-img" id="play-btn">
+      <img src="diamand.png" alt="Play" width="40" height="40" /></span>
+      <script>
+        document.getElementById('play-btn').onclick = function() {
+          window.location.href = 'player.html';
+        };
+      </script>
+      <span class="icon" id="help-btn">&#128295;</span>
+      <script>
+        document.getElementById('help-btn').onclick = function() {
+          window.location.href = 'help.html';
+        };
+      </script> 
     </div>
   </div>
   <script src="app.js"></script>
