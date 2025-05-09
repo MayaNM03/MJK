@@ -54,7 +54,7 @@
     </div>
   </div>
   <div class="player-album">
-    <img src="https://is1-ssl.mzstatic.com/image/thumb/Music126/v4/02/7e/2d/027e2d5a-06c8-a064-d734-2eff65980ee8/1779F33A-0A83-11EE-9592-777289A79EC0.jpg/800x800cc.jpg" alt="Album Cover" id="player-cover"/>
+    <img src="https://cdn-images.dzcdn.net/images/cover/eaf83c8d5d9d21d6ddd380222bc2fc72/1900x1900-000000-80-0-0.jpg" alt="Album Cover" id="player-cover"/>
   </div>
   <div class="player-info">
     <div class="player-title">
@@ -68,34 +68,24 @@
     <input type="range" min="0" max="100" value="0" id="progress-bar"/>
     <div class="player-buttons">
       <span class="icon">&#9198;</span>
-      <span class="icon" id="play-btn">&#9654;</span>
+      <span class="icon play-btn-img" id="play-btn"><img src="diamand.png" alt="Play" width="40" height="40" /></span>
       <span class="icon">&#9197;</span>
       <span class="icon">&#128257;</span>
     </div>
-    <div class="footer-bar">
-      <span class="icon" id="settings-btn">&#9881;</span>
-      <script>
-        document.getElementById('settings-btn').onclick = function() {
-          window.location.href = 'settings.html';
-        };
-      </script>
-      <span class="icon play-btn-img" id="play-btn">
-      <img src="diamand.png" alt="Play" width="40" height="40" /></span>
-      <script>
-        document.getElementById('play-btn').onclick = function() {
-          window.location.href = 'player.html';
-        };
-      </script>
-      <span class="icon" id="help-btn">&#128295;</span>
-      <script>
-        document.getElementById('help-btn').onclick = function() {
-          window.location.href = 'help.html';
-        };
-      </script> 
-    </div>
+    <audio id="audio-player" src="Aqua - Barbie Girl (Official Music Video).mp3" preload="auto"></audio>
   </div>
   <script src="app.js"></script>
   <script>
+    const audio = document.getElementById('audio-player');
+    let isPlaying = false;
+    document.getElementById('play-btn').onclick = function() {
+      if (isPlaying) {
+        audio.pause();
+      } else {
+        audio.play();
+      }
+      isPlaying = !isPlaying;
+    };
     // On every page: apply dark mode if set
     if (localStorage.getItem('darkMode') === 'on') {
       document.body.classList.add('dark-mode');
@@ -116,6 +106,7 @@
     .dark-mode .player-album-name,
     .dark-mode .player-controls,
     .dark-mode .player-buttons,
+    .dark-mode .footer-bar,
     .dark-mode .icon,
     .dark-mode .search {
       background: transparent !important;
@@ -145,6 +136,8 @@
       color: #fff !important;
       border: none !important;
     }
+    
+
   </style>
 </body>
 </html>
