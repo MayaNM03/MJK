@@ -11,10 +11,22 @@
   <!-- Main Page -->
   <div id="main-page">
     <div class="top-bar">
-      <span class="icon">&#8592;</span>
+      <span class="icon" onclick="window.history.back();">&#8592;</span>
+
       <input type="text" class="search" id="search-btn" placeholder="Search" readonly />
       <span class="icon" id="account-btn">&#128100;</span>
+      <script>
+        document.getElementById('account-btn').onclick = function() {
+          window.location.href = 'account.html';
+        };
+      </script>
+     
       <span class="icon" id="browse-btn">&#9776;</span>
+      <script>
+        document.getElementById('browse-btn').onclick = function() {
+          window.location.href = 'browse.html';
+        };
+      </script>
     </div>
     <div class="greeting">
       <h1>Здравей отново ,</h1>
@@ -39,54 +51,14 @@
     <div class="bottom-bar">
       <span class="icon" id="settings-btn">&#9881;</span>
       <span class="icon" id="play-btn">&#9654;</span>
+      <script>
+        document.getElementById('play-btn').onclick = function() {
+          window.location.href = 'player.html';
+        };
+      </script>
       <span class="icon" id="help-btn">&#128295;</span>
     </div>
   </div>
-
-  <!-- Player Page -->
-  <div id="player-page" style="display:none;">
-    <div class="top-bar">
-      <span class="icon" id="back-btn">&#8592;</span>
-      <input type="text" class="search" placeholder="Search" />
-      <span class="icon" id="account-btn">&#128100;</span>
-      <span class="icon" id="browse-btn">&#9776;</span>
-    </div>
-    <div class="player-menu">
-      <div class="player-menu-item">
-        <span class="icon">&#128191;</span>
-        <div>Библиотека</div>
-      </div>
-      <div class="player-menu-item">
-        <span class="icon">&#10084;</span>
-        <div>Любими<br>плейлисти</div>
-      </div>
-      <div class="player-menu-item">
-        <span class="icon">&#8681;</span>
-        <div>Изтеглени<br>плейлисти</div>
-      </div>
-    </div>
-    <div class="player-album">
-      <img src="cover1.jpg" alt="Album Cover" id="player-cover"/>
-    </div>
-    <div class="player-info">
-      <div class="player-title">
-        <span id="song-name"><b>Song name</b></span>
-        <span id="song-length" style="float:right;">3:33</span>
-      </div>
-      <div class="player-artist" id="song-artist">Artist Name</div>
-      <div class="player-album-name" id="album-name">Album Name</div>
-    </div>
-    <div class="player-controls">
-      <input type="range" min="0" max="100" value="0" id="progress-bar"/>
-      <div class="player-buttons">
-        <span class="icon">&#9198;</span>
-        <span class="icon">&#9654;</span>
-        <span class="icon">&#9197;</span>
-        <span class="icon">&#128257;</span>
-      </div>
-    </div>
-  </div>
-
   <script src="app.js"></script>
 </body>
 </html>

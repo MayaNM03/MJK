@@ -107,8 +107,14 @@
   <div class="browse-container">
     <div class="browse-header">
       <span class="icon" onclick="window.history.back();">&#8592;</span>
+
       <span class="browse-title">Разгледай</span>
       <span class="icon" id="account-btn">&#128100;</span>
+      <script>
+      document.getElementById('account-btn').onclick = function() {
+        window.location.href = 'account.html';
+      };
+      </script>
     </div>
     <input type="text" class="browse-search" placeholder="Search" />
     <div class="browse-list">

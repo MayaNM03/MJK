@@ -1,8 +1,3 @@
-// Show player page when play button is clicked
-document.getElementById('play-btn').onclick = function() {
-  document.getElementById('main-page').style.display = 'none';
-  document.getElementById('player-page').style.display = 'block';
-};
 
 // Go back to main page when back arrow is clicked
 document.getElementById('back-btn').onclick = function() {
@@ -49,6 +44,8 @@ document.querySelectorAll('#playlist-btn').forEach(function(input) {
     window.location.href = 'playlist.html';
   };
 });
+
+
 
 
 

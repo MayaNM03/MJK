@@ -141,10 +141,16 @@
   <div class="downloaded-container">
     <div class="downloaded-header">
       <span class="icon" onclick="window.history.back();">&#8592;</span>
+
       <div class="search-bar">
         <input type="text" placeholder="Search" readonly />
       </div>
       <span class="icon" id="account-btn">&#128100;</span>
+      <script>
+        document.getElementById('account-btn').onclick = function() {
+          window.location.href = 'account.html';
+        };
+      </script>
       <span class="icon">&#128190;</span>
     </div>
     <div class="downloaded-title">Изтеглени песни</div>

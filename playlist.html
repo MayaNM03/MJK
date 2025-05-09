@@ -173,10 +173,17 @@
   <div class="playlist-container">
     <div class="playlist-header">
       <span class="icon" onclick="window.history.back();">&#8592;</span>
+
       <div class="search-bar">
         <input type="text" placeholder="Search" readonly />
       </div>
       <span class="icon" id="account-btn">&#128100;</span>
+        <script>
+          document.getElementById('account-btn').onclick = function() {
+            window.location.href = 'account.html';
+          };
+        </script>
+
       <span class="icon" id="playlist-btn">&#9776;</span>
     </div>
     <div class="playlist-cover">

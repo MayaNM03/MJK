@@ -8,16 +8,27 @@
 </head>
 <body>
   <div class="top-bar">
-    <span class="icon">&#8592;</span>
+    <span class="icon" onclick="window.history.back();">&#8592;</span>
+
     <input type="text" class="search" placeholder="Search" />
-    <span class="icon">&#128100;</span>
-    <span class="icon">&#9776;</span>
-  </div>
+    <span class="icon" id="account-btn">&#128100;</span>
+    <script>
+      document.getElementById('account-btn').onclick = function() {
+        window.location.href = 'account.html';
+      };
+    </script>
+    <span class="icon" id="browse-btn">&#9776;</span>
+    <script>        
+      document.getElementById('browse-btn').onclick = function() {
+        window.location.href = 'browse.html';
+      };
+    </script>
+  </div>  
   <div class="player-menu">
     <div class="player-menu-item">
       <span class="icon">&#128191;</span>
       <div>Библиотека</div>
-    </div>
+    </div>  
     <div class="player-menu-item">
       <span class="icon">&#10084;</span>
       <div>Любими<br>плейлисти</div>

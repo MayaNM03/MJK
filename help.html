@@ -13,7 +13,7 @@
       padding: 0;
       background: #fff;
     }
-    .help-container {
+    .help-container {   
       width: 100vw;
       height: 100vh;
       min-height: 100vh;
@@ -118,8 +118,14 @@
   <div class="help-container">
     <div class="help-header">
       <span class="icon" onclick="window.history.back();">&#8592;</span>
+
       <span class="help-title">Как можем да ви помогнем?</span>
-      <span class="icon">&#128100;</span>
+      <span class="icon" id="account-btn">&#128100;</span>
+      <script>
+        document.getElementById('account-btn').onclick = function() {
+          window.location.href = 'account.html';
+        };
+      </script>
       <span class="icon">&#9776;</span>
     </div>
     <div class="help-section">
