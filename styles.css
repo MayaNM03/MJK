@@ -154,3 +154,20 @@ body {
   color: #222;
   cursor: pointer;
 }
+/* Custom scrollbar for dark mode scroll-list */
+body.dark-mode .scroll-list::-webkit-scrollbar {
+  height: 12px;
+  background: #6a4ea0;
+}
+body.dark-mode .scroll-list::-webkit-scrollbar-thumb {
+  background: #d26eb0;
+  border-radius: 6px;
+}
+body.dark-mode .scroll-list::-webkit-scrollbar-track {
+  background: #6a4ea0;
+}
+/* For Firefox */
+body.dark-mode .scroll-list {
+  scrollbar-color: #d26eb0 #6a4ea0;
+  scrollbar-width: thin;
+}
