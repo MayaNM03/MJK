@@ -72,7 +72,7 @@
       <span class="icon" id="prev-btn"> &#9198;</span>
       <span class="icon play-btn-img" id="play-btn"><img src="diamand.png" alt="Play" width="40" height="40" /></span>
       <span class="icon" id="next-btn">&#9197;</span>
-      <span class="icon" id="replay-btn">&#128257;</span>
+      <span class="icon" id="replay-btn"><img src="Replay.png" alt="Replay" width="40" height="40"></span>
     </div>
     <audio id="audio-player" src="Aqua - Barbie Girl (Official Music Video).mp3" preload="auto"></audio>
   </div>
@@ -105,7 +105,7 @@
       },
       {
         src: 'Lady Gaga - Abracadabra (Official Music Video).mp3',
-        cover: 'https://media.pitchfork.com/photos/67a0394758a145a55f221e18/4:3/w_2279,h_1710,c_limit/Lady-Gaga-Abracadabra.jpg',
+        cover: 'https://b3745597.smushcdn.com/3745597/wp-content/uploads/2025/02/lady-gaga-abracadabra.jpg?lossy=2&strip=1&webp=1',
         name: 'Abracadabra',
         artist: 'Lady Gaga',
         album: 'Chromatica',
@@ -149,6 +149,23 @@
       setPlayBtnRotation();
     };
 
+    function setReplayBtnRotation() {
+      const img = replayBtn.querySelector('img');
+      if (!isReplay && img) {
+        img.style.animation = 'none';
+        img.style.transform = 'rotate(0deg)';
+      } else if (img) {
+        img.style.animation = 'spin 2s linear infinite';
+      }
+    }
+
+    replayBtn.onclick = function() {
+      isReplay = !isReplay;
+      audio.loop = isReplay;
+      replayBtn.style.color = isReplay ? '#ffb6e6' : '';
+      setReplayBtnRotation();
+    };
+
     prevBtn.onclick = function() {
       songIndex = (songIndex - 1 + songs.length) % songs.length;
       updatePlayer(songIndex);
@@ -163,12 +180,6 @@
       audio.play();
       isPlaying = true;
       setPlayBtnRotation();
-    };
-
-    replayBtn.onclick = function() {
-      isReplay = !isReplay;
-      audio.loop = isReplay;
-      replayBtn.style.color = isReplay ? '#ffb6e6' : '';
     };
 
     const progressBar = document.getElementById('progress-bar');
@@ -191,6 +202,14 @@
     // Reset progress bar when song changes
     audio.addEventListener('loadedmetadata', function() {
       progressBar.value = 0;
+    });
+
+    // Add ended event listener to play next song only if not in replay mode
+    audio.addEventListener('ended', function() {
+      if (!isReplay) {
+        songIndex = (songIndex + 1) % songs.length;
+        updatePlayer(songIndex);
+      }
     });
 
     // Initial state
@@ -246,8 +265,14 @@
       color: #fff !important;
       border: none !important;
     }
-    
-
+    @keyframes spin {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(-360deg);
+      }
+    }
   </style>
 </body>
 </html>

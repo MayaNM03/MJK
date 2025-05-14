@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Помощ</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    html, body {
+      width: 100vw;
+      height: 100vh;
+      margin: 0;
+      padding: 0;
+      background: #fff;
+    }
+    .help-container {   
+      width: 100vw;
+      height: 100vh;
+      min-height: 100vh;
+      padding: 3vw 6vw;
+      background: #fff;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+    }
+    .help-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 2vw;
+    }
+    .help-header .icon {
+      color: #f7a6e7;
+      font-size: 2vw;
+      margin-right: 1vw;
+      cursor: pointer;
+    }
+    .help-title {
+      color: #b6a6e7;
+      font-size: 2vw;
+      font-weight: bold;
+      flex: 1;
+      text-align: center;
+    }
+    .help-section {
+      margin-bottom: 1.5vw;
+    }
+    .help-select {
+      width: 100%;
+      padding: 1vw;
+      border-radius: 8px;
+      border: 1px solid #888;
+      font-size: 1.2vw;
+      margin-bottom: 1vw;
+      box-sizing: border-box;
+    }
+    .help-textarea {
+      width: 100%;
+      height: 15vw;
+      min-height: 120px;
+      border-radius: 8px;
+      border: 1px solid #888;
+      font-size: 1.2vw;
+      margin-bottom: 1vw;
+      box-sizing: border-box;
+      resize: vertical;
+      padding: 1vw;
+    }
+    .help-send-btn {
+      float: right;
+      background: #fff;
+      color: #222;
+      border: 1px solid #888;
+      border-radius: 8px;
+      padding: 0.7vw 2vw;
+      font-size: 1.2vw;
+      cursor: pointer;
+      margin-top: 0.5vw;
+      margin-bottom: 1vw;
+      transition: background 0.2s;
+    }
+    .help-send-btn:hover {
+      background: #f7a6e7;
+      color: #fff;
+    }
+    .help-footer {
+      display: flex;
+      justify-content: space-between;
+      margin-top: auto;
+      gap: 1vw;
+    }
+    .help-footer-btn {
+      flex: 1;
+      background: #fff;
+      color: #222;
+      border: 1px solid #888;
+      border-radius: 8px;
+      padding: 0.7vw 0;
+      font-size: 1.2vw;
+      cursor: pointer;
+      margin: 0 0.5vw;
+      transition: background 0.2s;
+    }
+    .help-footer-btn:hover {
+      background: #f7a6e7;
+      color: #fff;
+    }
+    @media (max-width: 600px) {
+      .help-container {
+        padding: 2vw 2vw;
+      }
+      .help-title {
+        font-size: 1.2em;
+      }
+    }
+    /* Dark mode styles */
+    body.dark-mode, .dark-mode .help-container {
+      background: #6a4ea0 !important;
+      color: #d26eb0 !important;
+    }
+    .dark-mode .help-header,
+    .dark-mode .help-title,
+    .dark-mode .help-label,
+    .dark-mode .help-divider,
+    .dark-mode .help-select,
+    .dark-mode .help-section-title {
+      background: transparent !important;
+      color: #d26eb0 !important;
+      border-color: #d26eb0 !important;
+    }
+    .dark-mode .help-section {
+      background: #6a4ea0 !important;
+      color: #ffd1ec !important;
+      border-color: #d26eb0 !important;
+    }
+    .dark-mode .help-select {
+      background: #e48ad7 !important;
+      color: #fff !important;
+    }
+    .dark-mode .help-textarea {
+      background: #572d69 !important;
+      color: #ffd1ec !important;
+      border-color: #d26eb0 !important;
+    }
+    .dark-mode .help-send-btn {
+      background: #e48ad7 !important;
+      color: #fff !important;
+      border-color: #d26eb0 !important;
+    }
+    .dark-mode .help-send-btn:hover {
+      background: #ffb6e6 !important;
+      color: #fff !important;
+    }
+    .dark-mode .help-footer {
+      background: #6a4ea0 !important;
+    }
+    .dark-mode .help-footer-btn {
+      background: #e48ad7 !important;
+      color: #fff !important;
+      border-color: #d26eb0 !important;
+    }
+    .dark-mode .help-footer-btn:hover {
+      background: #ffb6e6 !important;
+      color: #fff !important;
+    }
+    .dark-mode .icon {
+      color: #d26eb0 !important;
+    }
+    .dark-mode .icon:hover {
+      color: #ffb6e6 !important;
+    }
+  </style>
+</head>
+<body>
+  <div class="help-container">
+    <div class="help-header">
+      <span class="icon" onclick="window.history.back();">&#8592;</span>
+
+      <span class="help-title">Как можем да ви помогнем?</span>
+      <span class="icon" id="account-btn">&#128100;</span>
+      <script>
+        document.getElementById('account-btn').onclick = function() {
+          window.location.href = 'account.html';
+        };
+      </script>
+      <span class="icon">&#9776;</span>
+    </div>
+    <div class="help-section">
+      <select class="help-select">
+        <option>Често задавани въпроси</option>
+      </select>
+      <select class="help-select">
+        <option>Безопасност и поверителност</option>
+      </select>
+      <select class="help-select">
+        <option>Условия за ползване</option>
+      </select>
+      <textarea class="help-textarea"></textarea>
+      <button class="help-send-btn">Изпрати</button>
+    </div>
+    <div class="help-footer">
+      <button class="help-footer-btn">Версия</button>
+      <button class="help-footer-btn">Контакти</button>
+    </div>
+  </div>
+  <script src="app.js"></script>
+  <script>
+    // On every page: apply dark mode if set
+    if (localStorage.getItem('darkMode') === 'on') {
+      document.body.classList.add('dark-mode');
+    }
+  </script>
+</body>
+</html>

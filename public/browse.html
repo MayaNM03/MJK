@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Разгледай</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    html, body {
+      width: 100vw;
+      height: 100vh;
+      margin: 0;
+      padding: 0;
+      background: #fff;
+    }
+    .browse-container {
+      width: 100vw;
+      height: 100vh;
+      min-height: 100vh;
+      padding: 3vw 6vw;
+      background: #fff;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .browse-header {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      margin-bottom: 2vw;
+    }
+    .browse-header .icon {
+      color: #f7a6e7;
+      font-size: 2vw;
+      margin-right: 1vw;
+      cursor: pointer;
+    }
+    .browse-title {
+      color: #f7a6e7;
+      font-size: 2vw;
+      font-weight: bold;
+      flex: 1;
+      text-align: center;
+    }
+    .browse-header .icon:last-child {
+      margin-left: auto;
+      margin-right: 0;
+    }
+    .browse-search {
+      width: 100%;
+      max-width: 500px;
+      margin: 0 auto 2vw auto;
+      padding: 0.7vw 1vw;
+      border-radius: 20px;
+      border: 1px solid #eee;
+      font-size: 1.2vw;
+      background: #f7f7f7;
+      color: #222;
+      box-sizing: border-box;
+      display: block;
+    }
+    .browse-list {
+      width: 100%;
+      max-width: 500px;
+      display: flex;
+      flex-direction: column;
+      gap: 1.2vw;
+      margin: 0 auto;
+    }
+    .browse-item {
+      display: flex;
+      align-items: center;
+      background: #d6d6fa;
+      border-radius: 12px;
+      padding: 1.2vw 1vw;
+      font-size: 1.5vw;
+      color: #222;
+      font-weight: bold;
+      gap: 1vw;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .browse-item .icon {
+      font-size: 2vw;
+      color: #f7a6e7;
+      margin-right: 1vw;
+    }
+    .browse-item:hover {
+      background: #f7a6e7;
+      color: #fff;
+    }
+    @media (max-width: 600px) {
+      .browse-container {
+        padding: 2vw 2vw;
+      }
+      .browse-title {
+        font-size: 1.2em;
+      }
+      .browse-item {
+        font-size: 1em;
+      }
+    }
+    /* Dark mode styles */
+    body.dark-mode, .dark-mode .browse-container {
+      background: #6a4ea0 !important;
+      color: #d26eb0 !important;
+    }
+    .dark-mode .browse-header,
+    .dark-mode .browse-title,
+    .dark-mode .browse-label,
+    .dark-mode .browse-divider,
+    .dark-mode .browse-select {
+      background: transparent !important;
+      color: #d26eb0 !important;
+      border-color: #d26eb0 !important;
+    }
+    .dark-mode .browse-list {
+      background: transparent !important;
+    }
+    .dark-mode .browse-item {
+      background: #572d69 !important;
+      color: #ffd1ec !important;
+      border-color: #d26eb0 !important;
+    }
+    .dark-mode .browse-item .icon {
+      color: #d26eb0 !important;
+    }
+    .dark-mode .browse-item:hover {
+      background: #e48ad7 !important;
+      color: #fff !important;
+    }
+    .dark-mode .browse-search {
+      background: #e48ad7 !important;
+      color: #fff !important;
+      border: none !important;
+    }
+    .dark-mode .icon {
+      color: #d26eb0 !important;
+    }
+    .dark-mode .icon:hover {
+      color: #ffb6e6 !important;
+    }
+  </style>
+</head>
+<body>
+  <div class="browse-container">
+    <div class="browse-header">
+      <span class="icon" onclick="window.history.back();">&#8592;</span>
+
+      <span class="browse-title">Разгледай</span>
+      <span class="icon account-btn-img" id="account-btn">
+        <img src="profile.png" alt="Icon" width="30" height="30" />
+      </span>
+      <script>
+      document.getElementById('account-btn').onclick = function() {
+        window.location.href = 'account.html';
+      };
+      </script>
+    </div>
+    <input type="text" class="browse-search" placeholder="Search" />
+    <div class="browse-list">
+      <div class="browse-item" id="favorite-btn"><span class="icon">&#10084;</span> Любими
+        <script>
+          document.querySelectorAll('#favorite-btn').forEach(function(input) {
+            input.onclick = function() {
+              window.location.href = 'favorite.html';
+            };
+          });
+        </script>
+      </div>
+      <div class="browse-item" id="downloaded-btn"><span class="icon">&#128190;</span> Изтеглени
+        <script>
+          document.querySelectorAll('#downloaded-btn').forEach(function(input) {
+            input.onclick = function() {
+              window.location.href = 'downloaded.html';
+            };
+          });
+        </script>
+      </div>
+      <div class="browse-item" id="album-btn"><span class="icon">&#127925;</span> Албуми 
+        <script>          
+          document.querySelectorAll('#album-btn').forEach(function(input) {
+            input.onclick = function() {
+              window.location.href = 'album.html';
+            };
+          });
+        </script>
+      </div>
+      <div class="browse-item" id="artist-btn" ><span class="icon">&#128101;</span> Изпълнители
+        <script>
+          document.querySelectorAll('#artist-btn').forEach(function(input) {
+            input.onclick = function() {
+              window.location.href = 'artist.html';
+            };
+          });
+        </script>
+      </div>
+      <div class="browse-item" id="playlist-btn"><span class="icon" >&#9776;</span> Плейлисти
+        <script>
+          document.querySelectorAll('#playlist-btn').forEach(function(input) {
+            input.onclick = function() {
+              window.location.href = 'playlist.html';
+            };
+          });
+        </script>
+      </div> 
+    </div>
+  </div>
+  <script src="app.js"></script>
+  <script>
+    // On every page: apply dark mode if set
+    if (localStorage.getItem('darkMode') === 'on') {
+      document.body.classList.add('dark-mode');
+    }
+  </script>
+</body>
+</html>
