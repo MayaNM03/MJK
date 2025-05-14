@@ -50,7 +50,7 @@
     }
     .album-header .search-bar input {
       border: none;
-      background: transparent;
+      background: #f7f7f7;
       width: 100%;
       font-size: 1.2vw;
       outline: none;
@@ -144,6 +144,7 @@
     .dark-mode .album-title,
     .dark-mode .album-label,
     .dark-mode .album-divider,
+    .dark-mode .search-bar,
     .dark-mode .album-select {
       background: transparent !important;
       color: #d26eb0 !important;
@@ -175,6 +176,15 @@
       background: #e48ad7 !important;
       color: #fff !important;
     }
+    .dark-mode .search-bar {
+      background: #e48ad7 !important;
+      color: #e48ad7 !important;
+    }
+    .dark-mode .search {
+      background: #e48ad7 !important;
+      color: #d26eb0 !important;
+      border-color: #d26eb0 !important;
+    }
   </style>
 </head>
 <body>
@@ -182,7 +192,12 @@
     <div class="album-header">
       <span class="icon" onclick="window.history.back();">&#8592;</span>
       <div class="search-bar">
-        <input type="text" placeholder="Search" readonly />
+        <input type="text" class="search" id="search-btn" placeholder="Search" readonly />
+        <script>
+          document.getElementById('search-btn').onclick = function() {
+            window.location.href = 'search.html';
+          };
+        </script>
       </div>
       <span class="icon account-btn-img" id="account-btn">
         <img src="profile.png" alt="Icon" width="30" height="30" />

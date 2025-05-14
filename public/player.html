@@ -10,7 +10,12 @@
   <div class="top-bar">
          <span class="icon" onclick="window.history.back();">&#8592;</span>
 
-    <input type="text" class="search" placeholder="Search" />
+      <input type="text" class="search" id="search-btn" placeholder="Search" readonly />
+      <script>
+        document.getElementById('search-btn').onclick = function() {
+          window.location.href = 'search.html';
+        };
+      </script>
     <span class="icon account-btn-img" id="account-btn">
         <img src="profile.png" alt="Icon" width="30" height="30" />
       </span>
@@ -236,8 +241,9 @@
     .dark-mode .player-controls,
     .dark-mode .player-buttons,
     .dark-mode .footer-bar,
-    .dark-mode .icon,
-    .dark-mode .search {
+    .dark-mode .search-bar,
+    .dark-mode .search,
+    .dark-mode .icon{
       background: transparent !important;
       color: #d26eb0 !important;
       border-color: #d26eb0 !important;
@@ -260,10 +266,14 @@
     .dark-mode .icon:hover {
       color: #ffb6e6 !important;
     }
+    .dark-mode .search-bar {
+      background: #e48ad7 !important;
+      color: #e48ad7 !important;
+    }
     .dark-mode .search {
       background: #e48ad7 !important;
-      color: #fff !important;
-      border: none !important;
+      color: #d26eb0 !important;
+      border-color: #d26eb0 !important;
     }
     @keyframes spin {
       from {

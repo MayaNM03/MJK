@@ -110,6 +110,8 @@
     .dark-mode .browse-title,
     .dark-mode .browse-label,
     .dark-mode .browse-divider,
+    .dark-mode .search-bar,
+    .dark-mode .search,
     .dark-mode .browse-select {
       background: transparent !important;
       color: #d26eb0 !important;
@@ -141,6 +143,15 @@
     .dark-mode .icon:hover {
       color: #ffb6e6 !important;
     }
+    .dark-mode .search-bar {
+      background: #e48ad7 !important;
+      color: #e48ad7 !important;
+    }
+    .dark-mode .search {
+      background: #e48ad7 !important;
+      color: #d26eb0 !important;
+      border-color: #d26eb0 !important;
+    }
   </style>
 </head>
 <body>
@@ -158,7 +169,12 @@
       };
       </script>
     </div>
-    <input type="text" class="browse-search" placeholder="Search" />
+      <input type="text" class="search" id="search-btn" placeholder="Search" readonly />
+      <script>
+        document.getElementById('search-btn').onclick = function() {
+          window.location.href = 'search.html';
+        };
+      </script>
     <div class="browse-list">
       <div class="browse-item" id="favorite-btn"><span class="icon">&#10084;</span> Любими
         <script>
