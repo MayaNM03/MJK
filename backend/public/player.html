@@ -91,48 +91,34 @@
     const prevBtn = document.getElementById('prev-btn');
     const nextBtn = document.getElementById('next-btn');
     const replayBtn = document.getElementById('replay-btn');
-    const songs = [
-      {
-        src: 'Aqua - Barbie Girl (Official Music Video).mp3',
-        cover: 'https://cdn-images.dzcdn.net/images/cover/eaf83c8d5d9d21d6ddd380222bc2fc72/1900x1900-000000-80-0-0.jpg',
-        name: 'Barbie Girl',
-        artist: 'Aqua',
-        album: 'Aquarium',
-        length: '3:21'
-      },
-      {
-        src: 'Into You - Ariana Grande (Lyrics).mp3',
-        cover: 'https://th.bing.com/th/id/OIP.5vXCsLpHPRa4bmZs1dJEawHaHa?w=158&h=180&c=7&r=0&o=7&cb=iwp1&dpr=1.3&pid=1.7&rm=3',
-        name: 'Into You',
-        artist: 'Ariana Grande',
-        album: 'Dangerous Woman',
-        length: '4:00'
-      },
-      {
-        src: 'Lady Gaga - Abracadabra (Official Music Video).mp3',
-        cover: 'https://b3745597.smushcdn.com/3745597/wp-content/uploads/2025/02/lady-gaga-abracadabra.jpg?lossy=2&strip=1&webp=1',
-        name: 'Abracadabra',
-        artist: 'Lady Gaga',
-        album: 'Chromatica',
-        length: '4:29'
-      },
-      {
-        src: 'Галена x Tea Tairovic - Абракадабра www.voxymp3.com_.mp3',
-        cover: 'https://i1.sndcdn.com/artworks-8kxQDxAXWo1uEzDI-nGOBJA-t500x500.jpg',
-        name: 'Абракадабра',
-        artist: 'Галена x Tea Tairovic',
-        album: 'Абракадабра',
-        length: '3:39'
+    let songs = [];
+
+    // Fetch songs from MongoDB
+    async function fetchSongs() {
+      try {
+        const response = await fetch('http://localhost:3000/api/songs');
+        songs = await response.json();
+        if (songs.length > 0) {
+          updatePlayer(songIndex);
+        }
+      } catch (error) {
+        console.error('Error fetching songs:', error);
       }
-    ];
+    }
+
+    // Call fetchSongs when the page loads
+    fetchSongs();
 
     function updatePlayer(index) {
-      audio.src = songs[index].src;
-      document.getElementById('player-cover').src = songs[index].cover;
-      document.getElementById('song-name').textContent = songs[index].name;
-      document.getElementById('song-artist').textContent = songs[index].artist;
-      document.getElementById('album-name').textContent = songs[index].album;
-      document.getElementById('song-length').textContent = songs[index].length;
+      if (songs.length === 0) return;
+      
+      const song = songs[index];
+      audio.src = song.audioUrl;
+      document.getElementById('player-cover').src = song.coverUrl;
+      document.getElementById('song-name').textContent = song.title;
+      document.getElementById('song-artist').textContent = song.artist;
+      document.getElementById('album-name').textContent = song.album;
+      document.getElementById('song-length').textContent = song.duration;
     }
 
     function setPlayBtnRotation() {
