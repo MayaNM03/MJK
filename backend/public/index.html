@@ -81,7 +81,7 @@
     </div>
     <div class="greeting">
       <h1>Здравей отново ,</h1>
-      <div class="dots">.......................</div>
+      <div class="user-name" id="user-name"></div>
     </div>
     <div class="section">
       <h2>Нови песни</h2>
@@ -141,6 +141,12 @@
   <script>
     if (localStorage.getItem('darkMode') === 'on') {
       document.body.classList.add('dark-mode');
+    }
+    // Display the logged-in user's name
+    const userName = sessionStorage.getItem('username') || localStorage.getItem('username') || '';
+    if (userName) {
+      const nameSpan = document.getElementById('user-name');
+      if (nameSpan) nameSpan.textContent = userName;
     }
   </script>
 </body>

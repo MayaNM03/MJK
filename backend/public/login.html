@@ -98,11 +98,36 @@
     <img src="Icon_white.png" alt="Logo" class="logo">
     <div class="title">Welcome Back!</div>
     <div class="subtitle">Don't have an account? <a href="signup.html" style="color:#f47ac2;">Sign up here.</a></div>
-    <form>
-      <input type="email" class="input-field" placeholder="EMAIL" required>
-      <input type="password" class="input-field" placeholder="PASSWORD" required>
+    <form id="login-form">
+      <input type="email" class="input-field" id="login-email" placeholder="EMAIL" required>
+      <input type="text" class="input-field" id="login-username" placeholder="NAME" required>
+      <input type="password" class="input-field" id="login-password" placeholder="PASSWORD" required>
       <button type="submit" class="login-btn">Log in</button>
+      <div id="login-error" style="color:red;margin-top:10px;display:none;"></div>
     </form>
   </div>
+  <script>
+    // Sync username between login and signup using localStorage
+    const loginUsername = document.getElementById('login-username');
+    loginUsername.value = localStorage.getItem('username') || '';
+    loginUsername.addEventListener('input', function() {
+      localStorage.setItem('username', loginUsername.value);
+    });
+
+    // Login form logic
+    document.getElementById('login-form').onsubmit = function(e) {
+      e.preventDefault();
+      const password = document.getElementById('login-password').value;
+      if (password !== 'MJKtest') {
+        document.getElementById('login-error').textContent = 'Грешна парола!';
+        document.getElementById('login-error').style.display = 'block';
+        return false;
+      }
+      // Save username and password to sessionStorage
+      sessionStorage.setItem('username', loginUsername.value);
+      sessionStorage.setItem('password', password);
+      window.location.href = 'index.html';
+    };
+  </script>
 </body>
 </html> 

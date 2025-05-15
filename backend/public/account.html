@@ -179,6 +179,7 @@
         <ellipse cx="50" cy="75" rx="35" ry="20" fill="#eee"/>
       </svg>
     </div>
+    <span class="account-name" id="account-name"></span>
     <div class="account-divider"></div>
     <div class="account-label">Детайли</div>
     <div class="account-box">Детайли....</div>
@@ -195,6 +196,12 @@
     // On every page: apply dark mode if set
     if (localStorage.getItem('darkMode') === 'on') {
       document.body.classList.add('dark-mode');
+    }
+    // Display the logged-in user's name in the account page
+    const userName = sessionStorage.getItem('username') || localStorage.getItem('username') || '';
+    if (userName) {
+      const nameSpan = document.getElementById('account-name');
+      if (nameSpan) nameSpan.textContent = userName;
     }
   </script>
 </body>

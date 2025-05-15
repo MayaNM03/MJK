@@ -98,13 +98,21 @@
     <img src="Icon_white.png" alt="Logo" class="logo">
     <div class="title">Create New Account</div>
     <div class="subtitle">Already Registered? <a href="login.html" style="color:#f47ac2;">Log in here.</a></div>
-    <form>
-      <input type="text" class="input-field" placeholder="NAME" required>
+    <form id="signup-form">
+      <input type="text" class="input-field" id="signup-username" placeholder="NAME" required>
       <input type="email" class="input-field" placeholder="EMAIL" required>
       <input type="password" class="input-field" placeholder="PASSWORD" required>
       <input type="date" class="input-field" placeholder="DATE OF BIRTH" required>
       <button type="submit" class="signup-btn">Sign up</button>
     </form>
   </div>
+  <script>
+    // Sync username between signup and login using localStorage
+    const signupUsername = document.getElementById('signup-username');
+    signupUsername.value = localStorage.getItem('username') || '';
+    signupUsername.addEventListener('input', function() {
+      localStorage.setItem('username', signupUsername.value);
+    });
+  </script>
 </body>
 </html> 
