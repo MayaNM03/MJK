@@ -42,9 +42,10 @@ body {
   font-size: 2.5vw;
   margin: 0;
 }
-.greeting .dots {
+.greeting .user-name {
   color: #b6a6e7;
-  font-size: 1.5vw;
+  font-family: 'Pacifico', cursive;
+  font-size: 2vw;
   margin-top: 0.5vw;
 }
 .section {

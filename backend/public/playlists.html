@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Playlists</title>
+  <title>Плейлисти</title>
   <link rel="stylesheet" href="styles.css" />
   <style>
     body {
@@ -150,80 +150,111 @@
 <body>
   <div class="top-bar">
     <span class="icon" onclick="window.history.back();">&#8592;</span>
-
-<input type="text" class="search" id="search-btn" placeholder="Search" readonly />
-<span class="icon account-btn-img" id="account-btn">
-        <img src="profile.png" alt="Icon" width="30" height="30" />
-      </span>
-<script>
- document.getElementById('account-btn').onclick = function() {
-   window.location.href = 'account.html';
- };
-</script>
-<span class="icon" id="browse-btn">&#9776;</span>
-<script>        
- document.getElementById('browse-btn').onclick = function() {
-   window.location.href = 'browse.html';
- };
-</script>
-</div>  
-  <div class="playlists-container">
-    <div class="playlist-card">
-      <img src="https://th.bing.com/th/id/OIP.NSAlKp_q9AdU8RKVxATwQwHaHa?w=183&h=183&c=7&r=0&o=7&cb=iwp1&dpr=1.3&pid=1.7&rm=3" alt="Chill Vibes" class="playlist-cover" />
-      <div class="playlist-title">Chill Vibes</div>
-      <div class="playlist-desc">Relax and unwind with this mellow playlist of chill tracks.</div>
-    </div>
-    <div class="playlist-card">
-      <img src="data:image/webp;base64,UklGRk4SAABXRUJQVlA4IEISAADwXACdASqjAOoAPp1EnUulo6MnpRCssPATiWJsrVcTxQ+reZ9x56PJPjxH0wMuuM4Oyf/wvXt/ifSF6NvmX/cT1pvThvYHogedN62X+jx7qYN13V+j9DuPm3xAGVh99NFR6Lw2/vRguVNAjW2s50mCiQJoWPLYKYwTyqocslMBbkOlkNaomP/ZXqmpf79P3F1iFX8dVPNqGy/u5H1X/VLd7nQNVIAr9fl13PVcZ9GfBVzDbyZhuTI9/TQplKgLth9GbFmuvzlQnhy/Y9UyffGFVCis6LqWR0A659O6st8wHp3UEP7K/tkITudgvfL24hVoRGoOQSfX/NqjkDyZYxiMr2GADGcukYVy7rNNpnPu8BQQt1/FwUlnNmEkZcAflUrpcmXzhNaNrMljcuaNPhIwMre6JQ1Sq+1+anh2YU2zsC2M2rkSEsy9BpqSDm6jpHuT+yHVuDLvqqLVkaKQpgnNucoQ2tWqAZhlilGbre4fMZrjrZlxp+oK2lOwW/KLeXBl38e6txPEKO0Xxy17PjL0gVRaJHPqxG39VXEUVQnKRxgFGsSqdbEz11quZhqT1lrnL89x71A3XbV4sR3vNFKmm5fngFKOIZ8YNU6YzEyeTMmNQY6eg/wQtqIRl9i74UAyhlhnKzyOAPIQGgRhDMQivTXx0N1tV1M4Em7abXWAMTGKnZ6/opHVXKpepB8/7waHEoVgVNUHsx+MKMY6N+/LwmH8h+OYWYJSjeqNkda3+fcZph85YmYuelPxCar8rCStEZ+1Y77gD45BYvm+Z0nA0iNbMSK5Xn2RrR5TzuE7KUVnO7io18zunfQQELj71tBHe6zDMqZOtc6705U7UmSwSW/iFcGOQzoNM/w0ka9fzNSWRkvTv8+ezZC+c1m6eSJobZGeU4yGV3H/9yKNVsga8ldDTg2SzI+AP+JHoq3a+GXrKeUjWYzk66l9+W1p3TNM5wMZ+FTusatizm8Yv1n3fzFfPCxu1y+c+q0hd47TwAD+9AhBV6SQJT9KPg1AUtFid0DGYkobRKIA8Jygu0RmTgARugdTMKwQLXwJXACJZU9Awzv9WnF3mjcURGI/ij7oe+SKGINf7EdANgS7UDZjbqzLbbOllZZRzFvuTiS771laz8A0haAtETozAT0wkqMTRW7fRhHXWRemNOpQ6B9nlw/Adh6him2yyNqPE6VqZOBD1DwNZMEP1pntQZ+gjHO2G8Flr8yRWTfufCraE7B6tgH8CzRnNC1PU5ZJWhOh1Fqnv66cV3HD6un5gR0rGJGOnH+U8PKodfK6/XncQZ/0Eb8x6fGPuuQWXvELZ+OyPplVFNx5v4rLARK9QtR3jcE8dU8B4d3vI9Qv5TWmJ1YthLLn0AX3xLDlAfyzWKS8wnvLsCqfXSW92LkCCW19Benc6fp7b9b7P4lQmsJEUj3rezEg3IC2LKoeR2UyApS91fNGjqLK+ssn+hMHpoHyvhkbOajur7fLP20uvW8CWVC8Qml7UbwVMgWxtvHhhCUkBG0CqFoWZFdu+1Ta1LTBPMVFJyfUq2xWlcd46Vv6RiBoRxWjknBP9JkDrdRL/3Nxbf3eoh8y5OKuBzUP1Ok3pfEPTKCZ1+FgG8SLwV2A8OJRoNRYHTcOwM+XDIDatk+yhjqFc/RkAM5bndmb3v/TmrTuMpjfzs8HJvB0whO5A+4cgm1EuU017W97JE0LOZIMO9vWMMR1jQVRLIQLEt+9yY5SuljmAiQIYmPUgZlODVNMSLC68mPcF+E2F3oikH6PXEdR7RbWXCOO1sxpnv0AppjmczY5lQBuozoRCc8LjrWgbSMJoRyJFNfbJAdP8Cdh2Qbv1dREyyuhtzxV2xtWrxD+Df3xXSkhhftRk9puyCYfO5qLMZ/BAcvSgxp86pnI+dQQNW9BHTyCh0/KpNqiBAY1jKON5O8EXnkpynfuKCWCfKX/q6HY+/st7xGgnnYgEvySvNr99HhqK0QzlyRTKg+xcB1Qs/BElHKhQDdaergWJ0CbX+ZRNx8qRE/IyPQBGstWFNnSz0PFF1R5TylCgh1+Y86BKcHNDAmh3M5jY9B5W2+JK64YnCTsPDDOpe/WN16p53/L2R0t23rkFJqJuf0+mriW9ALT4zDJAcziGj07SX8vjczEIEqeUJ6pK9kpkyxoCSKIdUkSOBj3asyOEiPymbXgSPOMNU4SZQSAfyBGQLS0FDehHIx5arrrwkonKu06zeHFyoS8escrp2YNE1EPxEuW9nqE0I55FOExpoO6fXpipY0uq7NuQup0gPXy/vbq1JtIhVY2KwoHNoAIu2rwBsQjOlYH9+9zeY1SNXGTsvKHV52YYbb0GwQ6OrdKBbJ+r7Ij3DV4hjZQR77TXiuuWMpUzOPDj8zXGc9SZ5H0aZjzcsUy6gqh5YjpasUk22OJisIRFFl1TfPcViq8Qz9f0HN08ayngNV8HqnpPU/YH3Pv8EzX5p9MbeFFSPB9+Urmy5kKBdDlpmYACBwdUqAJRoulvnblMDWoz/tmQQd74m9ac7r3dBXq1UvLO75fnDP8JDQbLMZvaZz+v59OIguHJXKsEKIVYTI8oflGMnTSkXhVp1ERvDwmQr3/f0yqOrjliYV1lK6eGjg3No4xH47qtzVWH1Fkue7OIAYuQDGiG4rHNqk+h9RnMUEsBrrNp8IEnmP3T9NTEyzNcdYxBgat6eKuv3gbbHs0U/ABocsTIWvmJ9D9AEEcMVivr+pQIwBD+AQB5HS/uavoGiKE1Vx67GeWHlTbtXP9DALS2+9ZAwvzuJzeyrnkVfuzeux55ae4aL2wr1hdg8SZ/42NbM9OKKRQbT75y7E2rwYCMpfeQEgPKWVif/6m4Hx5ugcnhNL8WYpwldIy9eZr79ncSWL/sUj4GrPwVdRbr738Gtxy4d42avvWlpjT1SxMG4mlt0xglHod51Fqlw5gUGN+YB+AUpC68D2iBsDXHyVPRlrZAHVxtwyxz2Ng9MbSHGecBA2+2oh+By82GvW63ZnS7NQMEtPXTDdEFnLU7ypn/FLuObjxj87DUmIMsQLK/yyDzPD3PY3lFaByIpZU9ZjEFythq9dvykm+jkpi1YdtdTfYRRUpa28UH5dahUmAcz1GpFibiIO8+lr6ONghCmHlkocElHah9Y/tvDx8DusSvNIRTc+rxjOY1I3XDTOMjPw1rI4T91lez4duSg3vaDC4Hs5wUVe2PxgV7eDbufP7uCBtCgbBVjAis8eIEd+PxT2C9wCo00zLF3RUjxlcHUnqwPKzqE0jT18djG9hYjMt+7hfNII6yxZFTdxsFA1rN1xkKBzFCRqrwlpVPlaCn4g1MHyJJ1UXQCoOM5r/mAXqe7zNQAs5N2SRidkXF61++Aiu3u1gH7mtdL6B6BV6F0iHGoeOULq/ZlJ9fEJ3vDDV8ztgnNol0Zx+CZqAF8Wrhx9K4aehomJ57ei2d/eQa7c9CWvfgFkXAYfV2Lq4JP1mo9P3sI318UNFVDIlKHGwJJW18aOYEzBw9K+Il4u7ONayRYT1eziE1bUwLVbffvYsHgD/jyEgPegfHCVMMY9VoD1fsKoVF2VEPLlr8XuvfYYKr6I0KoYuUnJw9tCOjIyUUQ7SUid87ZUoGI9SelZurA9f8Z8VKAs0BbCfQzH03iEUu+v17L/PfpBNzvr8wJ8r32jlXE/w196iS/08u9c/4MyPvKwcSpDSAWTkK+Uy3x1GugTv6Di3fnUnlweA8fCnFSpNn2gaae6E6NtljGoqvhVnfs0y4VyZjYClpew5ot7KhVSm5swGrbMiveAhVAnef8Mi4jIRes0By0KFOnu8Vdsr5ktOyAdvyVEa6I0A/lDxX3PhhnSuGYafUxraiu++d8qlvda0Vf13ucf7XZ/VHh5frpsvrZq5le2jQCiE/UQ+uducJaYInoWsL/31/w3APpenfMKztktCq0O2sHHsxK4TLMNTQyRpoA/ENQlwY0Tr3IGdjPOfo3K+URXiv2HopcHdBVmP0sqgI1qMCM1SHT25o4p4Pfi3U9uVMN5XDHZ/LuQvJhyHlUd5jSB/ueU3irKtFsR3guVoXUUhjflHegelP8xPKoRr5w9BGr/i5WcdspOiZs814Kd4xuWxByJI9hGVdsKpbFo8wZz01y9kOeBuky+u3ckFKe9HATg4fE6T4Y+33Pd3DyvXAb+IOYL2pvsXcd0GzKZEA42tDwVpmnkOHX/BGorQ/X4kbt+nEkIjvh7sQgCipAZz3WKefHtoybzoDr9OQ0DqC4tMmeLUIR87t106kidNmDWqGE220ACcVi+sfBcslsV70ujc10w7CqqQSyC7Q00izrj6CL6zFFPINq2aZeF99XVVmdUwT5l/OedSszmhTx36FFXdaggq8HaG/YwcEVWepgKEBJzCmM+jcQfvRd+FWkE+M5O1mkB8kAncVZybEbti4CBglF1VTVmTAxhSwmZZDl5qvBWnru0bSnW+3AxT9UwwSIKDCu9e0rIX2dx1wx6ngzvfoFXYdvnaouSmv7ri6tZ+AwBaUTsTrwknP7YrLuCvQ16EwwpVNPPLACplP/rtJGu5zQ8NyOpW/4Nq7sdBi+clr3J2IFGmAH2LUOZPwQEQfJNTZc02T1KvaXSN+H2RvWVHSmAikeAzOmaUIT+pa3jLBlx6P3lEJmUsVlsPBs+tdiyk3SEZlg+rkzyQlyh5lgl/C74Oh0A4UVWt0JJXEQ9EeryNLx6Hcf4RvumzPl+y/taK9pKR6QJu1aWdQctb7nfzPmTQXJ/F/C3kn1Csr3IEHwsXuR0nSJ/IVBki4m0GxkZ2xUEEpHiZRfLfMw/8G8D/XhmQNuouozCU9NCjAJkxU8Uf9ywILWie1g4+A6Gx7TXPkEfsRRwLLa/eD50CL0QoMnshUy6UV7WfDN/8xzyIHuB2fOhxU5+PBCyvS0IpOOz7ApoYsfhtHCzy6mp1/i7xEu/EhCwXQfcWb5fSBV2bD9pbVKWl0nnFFGDl+EytzxsKpMNkBopUXykedJe0295p9HxxRG/yrgtdfIrV8P6KQtvo/2Roi6+lWSwC2QE0/mc0V3XVArcN2FwmT2eQMSej241+Fo6S8j3ZZBHTffYyDFlvfVXR3unC1mhuJ5oVdrRWrNfOuxMHXhcjlcIkaC9nidVSfpKDfUZrUmfeAffdh/jmfo9nyI2WYI7M1uEKa9ib48ig/8nAKxdU4LwqFlRgOIgH8TY9o18gJShD7hdWsNja1V0xpuAhWLZ5uBVke55o80B2h/frS4txGNvTKmBhyOqlfVPOKZZMSYjlooijU2dVNHuMRZKYm2619uG0dcL36HsMW86dKZRInX0C+nKqyYzt5piRiE4CNOt24SkzqNnhKIQE8dsI5kZWjjuqTSAcG+MlI1/wou4sa1P8NsjsvGJR+Hqk/7gFW9hqA9FzgTQWALktRsfBKfZkfcG4TqcI4YuJMZa0P/r5RRVvE5dOSl/ahZ1yWNWwwy2kzMs8D7gY6yCtWM0uQmTP4/OcsJ8+r/j8OiOnZfn0AxZ4i3g7sc50gmSYO+GfMJB2r63IvclsD9VH3ytz40Rqb0qKSp4zaYZg61yVtPOrvfNEF/gf9n0Hh/LTX4Yrmw7dHu5JnD0a+SDv5/TlIC2vWjyt6FCzZ0E7wVNlaExDzo+t71CB2PoS/rIg3masfXFGqRCWozlTGT/o8cyD2mwHrce/Fn8OWUt0zh6RIPhiJE7NMdkkxWTElp2WTYhkBzC6x0WkOsy4oZL04Amlx+ESBUZ8qdMGFtPz9uOPqZnDbE6f3NQJGepq4rK+6XhO6ob8b1N7/XwzCD93TunLXOvkLP5TunxQAxIydKs08QU2HCTGLuh/z0KiWvipcgg5DljXJyerO8BvEApEcnnz+0QU4p5hmqBTl8XZHTPqxl7yNaj7GFspoNo+fuPTlv3Pt99fjjJsI5THwgeltylUCyaVsu4Xb9BR32yhGqNjgGOlVYinwiJoM0dkEmtDTiiDiDEQVzHQApw/7YsDFfNRB+VAVC+NFa2kd5swarzJJNOJD0XhHPC8jbHDQlDgcceaxLP862jDbyEGI3hzIed2qFukAia2lUTnaHzwIPay/eykK4IG7b0Hzo4n9bj47coKrcMq1scuY0kAzYgq96sCP0Gr1IKP3dfR8YW6cCK1AjJSeYtmpZiNRACtPaP68q31FUAq2dvk50jh4+7ZQFav+Ludt0luld47NpgD+uGFMK3CiYK6O/sfmSPWVADMAAA=" alt="Workout Hits" class="playlist-cover" />
-      <div class="playlist-title">Workout Hits</div>
-      <div class="playlist-desc">Get pumped with energetic songs perfect for your workout session.</div>
-    </div>
-    <div class="playlist-card">
-      <img src="https://th.bing.com/th/id/OIP.NJE_nNNZeU4juC5a5NOaUgHaHa?w=173&h=180&c=7&r=0&o=7&cb=iwp1&dpr=1.3&pid=1.7&rm=3" alt="Top 40" class="playlist-cover" />
-      <div class="playlist-title">Top 40</div>
-      <div class="playlist-desc">Stay up to date with the latest chart-topping hits.</div>
-    </div>
-    <div class="playlist-card">
-      <img src="https://th.bing.com/th/id/OIP.03liFcUd7xFraoguys8kbwHaGU?w=237&h=204&c=7&r=0&o=7&cb=iwp1&dpr=1.3&pid=1.7&rm=3" alt="Throwback" class="playlist-cover" />
-      <div class="playlist-title">Throwback</div>
-      <div class="playlist-desc">A nostalgic collection of your favorite classics from the past.</div>
-    </div>
-    <div class="playlist-card">
-      <span alt="AddPlaylist" class="add-playlist" id="add-playlists-btn" > + </span>
-      <div class="playlist-title">Add Playlist</div>
-      <div class="playlist-desc">Add a new playlist to your library.</div>
-      <script>
-        document.getElementById('add-playlists-btn').onclick = function() {
-          window.location.href = 'addplaylist.html';
-        };
-       </script>
-    </div>
-    <div class="footer-bar">
-      <span class="icon" id="settings-btn">&#9881;</span>
-      <script>
-        document.getElementById('settings-btn').onclick = function() {
-          window.location.href = 'settings.html';
-        };
-      </script>
-      <span class="icon play-btn-img" id="play-btn"><img src="diamand.png" alt="Play" width="40" height="40" /></span>
-      <script>
-        document.getElementById('play-btn').onclick = function() {
-          window.location.href = 'player.html';
-        };
-      </script>
-      <span class="icon" id="help-btn">&#128295;</span>
-      <script>
-        document.getElementById('help-btn').onclick = function() {
-          window.location.href = 'help.html';
-        };
-      </script>
-    </div>
+    <input type="text" class="search" id="search-btn" placeholder="Search" readonly />
+    <script>  
+      document.getElementById('search-btn').onclick = function() {
+        window.location.href = 'search.html';
+      };
+    </script>
+    <span class="icon account-btn-img" id="account-btn">
+      <img src="profile.png" alt="Icon" width="30" height="30" />
+    </span>
+    <span class="icon" id="browse-btn">&#9776;</span>
+  </div>
+  
+  <div class="playlists-container" id="playlists-container">
+    <!-- Playlists will be dynamically added here -->
   </div>
 
+  <div class="footer-bar">
+    <span class="icon" id="settings-btn">&#9881;</span>
+    <span class="icon play-btn-img" id="play-btn">
+      <img src="diamand.png" alt="Play" width="40" height="40" />
+    </span>
+    <span class="icon" id="help-btn">&#128295;</span>
+  </div>
+
+  <script src="playlist.js"></script>
   <script>
+    // Handle dark mode
     if (localStorage.getItem('darkMode') === 'on') {
       document.body.classList.add('dark-mode');
     }
+
+    // Navigation handlers
+    document.getElementById('account-btn').onclick = () => window.location.href = 'account.html';
+    document.getElementById('browse-btn').onclick = () => window.location.href = 'browse.html';
+    document.getElementById('settings-btn').onclick = () => window.location.href = 'settings.html';
+    document.getElementById('play-btn').onclick = () => window.location.href = 'player.html';
+    document.getElementById('help-btn').onclick = () => window.location.href = 'help.html';
+
+    // Create playlist card HTML
+    function createPlaylistCard(playlist) {
+      return `
+        <div class="playlist-card" data-playlist-id="${playlist.id}">
+          <img src="${playlist.cover}" alt="${playlist.title}" class="playlist-cover" />
+          <div class="playlist-title">${playlist.title}</div>
+          <div class="playlist-desc">${playlist.description}</div>
+          <button class="delete-playlist" onclick="deletePlaylistHandler('${playlist.id}')" style="
+            background: none;
+            border: none;
+            color: #ff4444;
+            cursor: pointer;
+            margin-top: 10px;
+            font-size: 0.9em;
+            opacity: 0.7;
+            transition: opacity 0.2s;
+          ">Изтрий</button>
+        </div>
+      `;
+    }
+
+    // Render all playlists
+    function renderPlaylists() {
+      const container = document.getElementById('playlists-container');
+      const playlists = getPlaylists();
+      
+      // Add the "Add Playlist" card first
+      container.innerHTML = `
+        <div class="playlist-card" id="add-playlist-card">
+          <span class="add-playlist" id="add-playlists-btn">+</span>
+          <div class="playlist-title">Добави плейлист</div>
+          <div class="playlist-desc">Добави нов плейлист към библиотеката си</div>
+        </div>
+      `;
+
+      // Add all playlists
+      playlists.forEach(playlist => {
+        container.innerHTML += createPlaylistCard(playlist);
+      });
+
+      // Add click handler for the "Add Playlist" card
+      document.getElementById('add-playlists-btn').onclick = () => {
+        window.location.href = 'addplaylist.html';
+      };
+
+      // Add click handlers for playlist cards
+      document.querySelectorAll('.playlist-card:not(#add-playlist-card)').forEach(card => {
+        card.addEventListener('click', (e) => {
+          // Don't navigate if delete button was clicked
+          if (!e.target.classList.contains('delete-playlist')) {
+            const playlistId = card.dataset.playlistId;
+            window.location.href = `playlist.html?id=${playlistId}`;
+          }
+        });
+      });
+    }
+
+    // Handle playlist deletion
+    function deletePlaylistHandler(playlistId) {
+      if (confirm('Сигурни ли сте, че искате да изтриете този плейлист?')) {
+        deletePlaylist(playlistId);
+        renderPlaylists();
+      }
+    }
+
+    // Initial render
+    renderPlaylists();
   </script>
 </body>
 </html>

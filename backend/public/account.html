@@ -15,7 +15,6 @@
     }
     .account-container {
       width: 100vw;
-      height: 100vh;
       min-height: 100vh;
       padding: 3vw 6vw;
       background: #fff;
@@ -23,6 +22,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      overflow-y: auto;
     }
     .account-header {
       display: flex;
@@ -80,7 +80,6 @@
     .account-box {
       width: 100%;
       max-width: 500px;
-      height: 5vw;
       min-height: 60px;
       border: 2px solid #222;
       border-radius: 8px;
@@ -90,7 +89,8 @@
       color: #b6a6e7;
       padding: 0.5vw;
       box-sizing: border-box;
-      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
     }
     .account-box:last-of-type {
       color: #8e8ee7;
@@ -119,11 +119,47 @@
         width: 80px;
         height: 80px;
         font-size: 40px;
+        min-width: 80px;
+        min-height: 80px;
       }
       .account-box {
-        font-size: 1em;
+        font-size: 0.9em;
+        min-height: auto;
+        padding: 10px;
       }
-      
+      .notification-item {
+        padding: 8px 0;
+      }
+      .notification-title {
+        font-size: 0.9em;
+      }
+      .notification-desc {
+        font-size: 0.8em;
+      }
+      .switch {
+        width: 40px;
+        height: 20px;
+      }
+      .slider:before {
+        height: 14px;
+        width: 14px;
+        left: 3px;
+        bottom: 3px;
+      }
+      input:checked + .slider:before {
+        transform: translateX(20px);
+      }
+      .email-settings {
+        padding: 8px;
+      }
+      .edit-email-btn {
+        padding: 6px 12px;
+        font-size: 0.8em;
+      }
+      .frequency-select {
+        padding: 4px 8px;
+        font-size: 0.8em;
+      }
     }
     /* Dark mode styles */
     body.dark-mode, .dark-mode .account-container {
@@ -158,6 +194,136 @@
     .dark-mode .icon:hover {
       color: #ffb6e6 !important;
     }
+    .notification-settings {
+      padding: 10px;
+      flex: 1;
+    }
+    .notification-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 0;
+      border-bottom: 1px solid #eee;
+    }
+    .notification-item:last-child {
+      border-bottom: none;
+    }
+    .notification-info {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .notification-title {
+      font-weight: bold;
+      color: #6a4ea0;
+    }
+    .notification-desc {
+      font-size: 0.9em;
+      color: #666;
+    }
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 50px;
+      height: 24px;
+    }
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      transition: .4s;
+    }
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 16px;
+      width: 16px;
+      left: 4px;
+      bottom: 4px;
+      background-color: white;
+      transition: .4s;
+    }
+    input:checked + .slider {
+      background-color: #8e8ee7;
+    }
+    input:checked + .slider:before {
+      transform: translateX(26px);
+    }
+    .slider.round {
+      border-radius: 24px;
+    }
+    .slider.round:before {
+      border-radius: 50%;
+    }
+    .email-settings {
+      padding: 12px;
+      flex: 1;
+    }
+    .email-info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+    .email-address {
+      font-weight: bold;
+      color: #6a4ea0;
+    }
+    .edit-email-btn {
+      background: #8e8ee7;
+      color: white;
+      border: none;
+      padding: 8px 15px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 0.9em;
+    }
+    .email-frequency {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .frequency-label {
+      color: #666;
+    }
+    .frequency-select {
+      padding: 5px 10px;
+      border-radius: 15px;
+      border: 1px solid #8e8ee7;
+      color: #6a4ea0;
+      background: white;
+    }
+    .dark-mode .notification-title,
+    .dark-mode .email-address {
+      color: #d26eb0 !important;
+    }
+    .dark-mode .notification-desc,
+    .dark-mode .frequency-label {
+      color: #b8b8b8 !important;
+    }
+    .dark-mode .notification-item {
+      border-bottom-color: #4a3a70 !important;
+    }
+    .dark-mode .slider {
+      background-color: #4a3a70;
+    }
+    .dark-mode .frequency-select {
+      background: #4a3a70;
+      color: #d26eb0;
+      border-color: #d26eb0;
+    }
+    .dark-mode .edit-email-btn {
+      background: #d26eb0;
+    }
   </style>
 </head>
 <body>
@@ -181,10 +347,60 @@
     </div>
     <span class="account-name" id="account-name"></span>
     <div class="account-divider"></div>
-    <div class="account-label">Детайли</div>
-    <div class="account-box">Детайли....</div>
-    <div class="account-label" style="color:#8e8ee7;">Известия ......</div>
-    <div class="account-box" style="color:#8e8ee7;">Известия ......</div>
+    <div class="account-label" style="color:#8e8ee7;">Известия</div>
+    <div class="account-box">
+      <div class="notification-settings">
+        <div class="notification-item">
+          <div class="notification-info">
+            <span class="notification-title">Нови песни</span>
+            <span class="notification-desc">Получавай известия за нови песни от любимите ти изпълнители</span>
+          </div>
+          <label class="switch">
+            <input type="checkbox" id="new-songs-notif" checked>
+            <span class="slider round"></span>
+          </label>
+        </div>
+        <div class="notification-item">
+          <div class="notification-info">
+            <span class="notification-title">Плейлисти</span>
+            <span class="notification-desc">Известия за нови плейлисти и актуализации</span>
+          </div>
+          <label class="switch">
+            <input type="checkbox" id="playlist-notif" checked>
+            <span class="slider round"></span>
+          </label>
+        </div>
+        <div class="notification-item">
+          <div class="notification-info">
+            <span class="notification-title">Специални оферти</span>
+            <span class="notification-desc">Промоции и специални предложения</span>
+          </div>
+          <label class="switch">
+            <input type="checkbox" id="offers-notif">
+            <span class="slider round"></span>
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <div class="account-label" style="color:#8e8ee7;">Имейл настройки</div>
+    <div class="account-box">
+      <div class="email-settings">
+        <div class="email-info">
+          <span class="email-address">user@example.com</span>
+          <button class="edit-email-btn">Промени</button>
+        </div>
+        <div class="email-frequency">
+          <span class="frequency-label">Честота на известията:</span>
+          <select id="email-frequency" class="frequency-select">
+            <option value="daily">Ежедневно</option>
+            <option value="weekly">Седмично</option>
+            <option value="monthly">Месечно</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
     <select class="account-select">
       <option>Език</option>
       <option>Български</option>
@@ -203,6 +419,46 @@
       const nameSpan = document.getElementById('account-name');
       if (nameSpan) nameSpan.textContent = userName;
     }
+  </script>
+  <script>
+    // Load saved notification preferences
+    document.addEventListener('DOMContentLoaded', function() {
+      const notificationSettings = JSON.parse(localStorage.getItem('notificationSettings')) || {
+        newSongs: true,
+        playlists: true,
+        offers: false,
+        emailFrequency: 'weekly'
+      };
+
+      document.getElementById('new-songs-notif').checked = notificationSettings.newSongs;
+      document.getElementById('playlist-notif').checked = notificationSettings.playlists;
+      document.getElementById('offers-notif').checked = notificationSettings.offers;
+      document.getElementById('email-frequency').value = notificationSettings.emailFrequency;
+
+      // Save notification preferences when changed
+      document.querySelectorAll('.switch input, #email-frequency').forEach(element => {
+        element.addEventListener('change', function() {
+          const settings = {
+            newSongs: document.getElementById('new-songs-notif').checked,
+            playlists: document.getElementById('playlist-notif').checked,
+            offers: document.getElementById('offers-notif').checked,
+            emailFrequency: document.getElementById('email-frequency').value
+          };
+          localStorage.setItem('notificationSettings', JSON.stringify(settings));
+        });
+      });
+
+      // Handle email edit button
+      document.querySelector('.edit-email-btn').addEventListener('click', function() {
+        const newEmail = prompt('Въведете новия имейл адрес:', document.querySelector('.email-address').textContent);
+        if (newEmail && newEmail.includes('@')) {
+          document.querySelector('.email-address').textContent = newEmail;
+          localStorage.setItem('userEmail', newEmail);
+        } else if (newEmail) {
+          alert('Моля, въведете валиден имейл адрес');
+        }
+      });
+    });
   </script>
 </body>
 </html>

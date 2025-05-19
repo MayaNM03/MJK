@@ -1,4 +1,3 @@
-
 // Go back to main page when back arrow is clicked
 document.getElementById('back-btn').onclick = function() {
   document.getElementById('player-page').style.display = 'none';
@@ -33,9 +32,15 @@ document.querySelectorAll('#browse-btn').forEach(function(btn) {
   };
 });
 
+// Handle search button clicks
 document.querySelectorAll('#search-btn').forEach(function(input) {
   input.onclick = function() {
-    window.location.href = 'search.html';
+    const searchQuery = input.value.trim();
+    if (searchQuery) {
+      window.location.href = `search.html?q=${encodeURIComponent(searchQuery)}`;
+    } else {
+      window.location.href = 'search.html';
+    }
   };
 });
 

@@ -67,12 +67,17 @@
       overflow: hidden;
       box-shadow: 0 0 20px rgba(106, 78, 160, 0.3);
       animation: rotate 20s linear infinite;
+      animation-play-state: paused;
     }
 
     .player-album img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+    }
+
+    .player-album.playing {
+      animation-play-state: running;
     }
 
     @keyframes rotate {
@@ -98,10 +103,44 @@
       transition: transform 0.2s;
     }
 
+    .player-buttons .icon:hover {
+      transform: scale(1.1);
+    }
 
     .play-btn-img img {
       width: 50px;
       height: 50px;
+      transition: transform 0.3s;
+    }
+
+    .play-btn-img.playing img {
+      transform: rotate(-90deg);
+    }
+
+    #progress-bar {
+      width: 100%;
+      height: 5px;
+      -webkit-appearance: none;
+      background: #e0e0e0;
+      border-radius: 5px;
+      outline: none;
+    }
+
+    #progress-bar::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 15px;
+      height: 15px;
+      background: #6a4ea0;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    .dark-mode #progress-bar {
+      background: #d26eb0;
+    }
+
+    .dark-mode #progress-bar::-webkit-slider-thumb {
+      background: #ffd1ec;
     }
 
     /* Song list styles */
@@ -235,6 +274,7 @@
     </div>
     <audio id="audio-player" src="Aqua - Barbie Girl (Official Music Video).mp3" preload="auto"></audio>
   </div>
+
   <!-- Song List -->
   <ul class="song-list">
     <li class="song-item active" data-song="0">
