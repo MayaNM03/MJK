@@ -50,6 +50,7 @@
     .browse-search {
       width: 100%;
       max-width: 500px;
+      height: 50px;
       margin: 0 auto 2vw auto;
       padding: 0.7vw 1vw;
       border-radius: 20px;
@@ -159,7 +160,13 @@
     <div class="browse-header">
       <span class="icon" onclick="window.history.back();">&#8592;</span>
 
-      <span class="browse-title">Разгледай</span>
+      <input type="text" class="search" id="search-btn" placeholder="Search" readonly />
+      <script>
+        document.getElementById('search-btn').onclick = function() {
+          window.location.href = 'search.html';
+        };
+      </script>
+
       <span class="icon account-btn-img" id="account-btn">
         <img src="profile.png" alt="Icon" width="30" height="30" />
       </span>
@@ -169,13 +176,17 @@
       };
       </script>
     </div>
-      <input type="text" class="search" id="search-btn" placeholder="Search" readonly />
-      <script>
-        document.getElementById('search-btn').onclick = function() {
-          window.location.href = 'search.html';
-        };
-      </script>
     <div class="browse-list">
+      <span class="browse-title">Разгледай</span>
+      <div class="browse-item" id="addsong-btn"><span class="icon">+</span> Добави песен
+        <script>
+          document.querySelectorAll('#addsong-btn').forEach(function(input) {
+            input.onclick = function() {
+              window.location.href = 'upload.html';
+            };
+          });
+        </script>
+      </div>
       <div class="browse-item" id="favorite-btn"><span class="icon">&#10084;</span> Любими
         <script>
           document.querySelectorAll('#favorite-btn').forEach(function(input) {
@@ -212,11 +223,11 @@
           });
         </script>
       </div>
-      <div class="browse-item" id="playlist-btn"><span class="icon" >&#9776;</span> Плейлисти
+      <div class="browse-item" id="playlists-btn"><span class="icon" >&#9776;</span> Плейлисти
         <script>
-          document.querySelectorAll('#playlist-btn').forEach(function(input) {
+          document.querySelectorAll('#playlists-btn').forEach(function(input) {
             input.onclick = function() {
-              window.location.href = 'playlist.html';
+              window.location.href = 'playlists.html';
             };
           });
         </script>

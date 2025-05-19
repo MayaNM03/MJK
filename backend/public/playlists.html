@@ -46,6 +46,23 @@
       text-align: center;
       transition: box-shadow 0.2s;
     }
+    .add-playlist {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 120px;
+      height: 120px;
+      margin: 0 auto 16px auto;
+      background: #f7a6e7;
+      border-radius: 12px;
+      font-size: 48px;
+      color: white;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    .add-playlist:hover {
+      transform: scale(1.05);
+    }
     .playlist-card:hover {
       box-shadow: 0 4px 16px rgba(164, 122, 255, 0.15);
     }
@@ -170,6 +187,16 @@
       <img src="https://th.bing.com/th/id/OIP.03liFcUd7xFraoguys8kbwHaGU?w=237&h=204&c=7&r=0&o=7&cb=iwp1&dpr=1.3&pid=1.7&rm=3" alt="Throwback" class="playlist-cover" />
       <div class="playlist-title">Throwback</div>
       <div class="playlist-desc">A nostalgic collection of your favorite classics from the past.</div>
+    </div>
+    <div class="playlist-card">
+      <span alt="AddPlaylist" class="add-playlist" id="add-playlists-btn" > + </span>
+      <div class="playlist-title">Add Playlist</div>
+      <div class="playlist-desc">Add a new playlist to your library.</div>
+      <script>
+        document.getElementById('add-playlists-btn').onclick = function() {
+          window.location.href = 'addplaylist.html';
+        };
+       </script>
     </div>
     <div class="footer-bar">
       <span class="icon" id="settings-btn">&#9881;</span>
