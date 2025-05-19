@@ -113,6 +113,15 @@
     signupUsername.addEventListener('input', function() {
       localStorage.setItem('username', signupUsername.value);
     });
+
+    // Add form submission handler
+    document.getElementById('signup-form').onsubmit = function(e) {
+      e.preventDefault();
+      // Save username to sessionStorage
+      sessionStorage.setItem('username', signupUsername.value);
+      // Redirect to index page
+      window.location.href = 'index.html';
+    };
   </script>
 </body>
 </html> 
